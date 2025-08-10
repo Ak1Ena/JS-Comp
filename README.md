@@ -9,7 +9,7 @@ For create the company website
 
 To keep your local repository up-to-date and avoid conflicts when pushing, follow these steps:
 
-1. **Stage your changes:**
+**Stage your changes:**
 
 ```bash
 git add .
@@ -17,3 +17,11 @@ git commit -m "<commit message>"
 git pull --rebase origin <branch>
 git push origin <branch>
 ```
+
+**Profile Dev**
+.gitignore
+```.gitignore
+*
+!public/src/profiles/<folder-name>/**
+```
+
