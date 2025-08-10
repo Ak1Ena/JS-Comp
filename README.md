@@ -14,7 +14,7 @@ To keep your local repository up-to-date and avoid conflicts when pushing, follo
 ```bash
 git add .
 git commit -m "<commit message>"
-git pull --rebase origin <branch>
+git pull origin <branch>
 git push origin <branch>
 ```
 
