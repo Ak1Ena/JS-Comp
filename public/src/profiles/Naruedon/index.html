@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+  body {
+    margin: 0;
+    overflow-x: scroll; /* ให้เลื่อนได้ในแนวนอน */
+    overflow-y: hidden; /* ซ่อนแนวตั้ง */
+    white-space: nowrap;
+    background: #f0f0f0;
+    background-color: aquamarine;
+  }
+  .content {
+    position: relative;
+  }
+  .box {
+    display: inline-block;
+    width: 500px;
+    height: 100vh;
+    line-height: 100vh;
+    text-align: center;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+  }
+
+  
+  .line {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: black;
+    z-index: 1000;
+  }
+
+    /* จุดที่ลากได้ */
+  .marker {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url(png/1.png) no-repeat center center;
+    border-radius: 50%;
+    cursor: grab;
+    z-index: 1001;
+  }
+    .marker:active {
+        cursor: grabbing;
+        animation: move 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes move {
+        0%{background: url(png/1.png) no-repeat center center;}
+        25%{background: url(png/1move.png) no-repeat center center;}
+        50%{background: url(png/2move.png) no-repeat center center;}
+        75%{background: url(png/2.png) no-repeat center center;}
+    }
+
+</style>
+</head>
+<body>
+
+<!-- เส้นและจุด (อยู่ fixed ไม่ขยับ) -->
+<div id = "line" class = "line"></div>
+<div id = "marker" class = "marker"></div>
+
+<!-- กล่องเนื้อหา -->
+<div class="content">
+  <div id = "box" class="box" data-index="0"><div class="text">ข้อความช่อง 1</div></div>
+  <div id = "box" class="box" data-index="1"><div class="text">ข้อความช่อง 2</div></div>
+  <div id = "box" class="box" data-index="2"><div class="text">ข้อความช่อง 3</div></div>
+  <div id = "box" class="box" data-index="3"><div class="text">ข้อความช่อง 4</div></div>
+  <div id = "box" class="box" data-index="4"><div class="text">ข้อความช่อง 5</div></div>
+  <div id = "box" class="box" data-index="5"><div class="text">ข้อความช่อง 6</div></div>
+</div>
+
+</body>
+
+<script>
+
+const marker = document.getElementById('marker');
+const line = document.getElementById('line');
+let isDragging = false;
+
+window.addEventListener('load', () => {
+  const lineRect = line.getBoundingClientRect();
+  marker.style.left = `${lineRect.left}px`;
+  window.scrollTo(0, 0); // เลื่อนกลับไปที่จุดเริ่มต้น
+});
+
+marker.addEventListener('mousedown', () => {
+  isDragging = true;
+  marker.style.cursor = 'grabbing';
+});
+
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+  marker.style.cursor = 'grab';
+});
+
+document.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+
+  const lineRect = line.getBoundingClientRect();
+  let newX = e.clientX;
+
+  // จำกัดให้อยู่ในเส้น
+  if (newX < lineRect.left) newX = lineRect.left;
+  if (newX > lineRect.right) newX = lineRect.right;
+
+  // ขยับจุด
+  marker.style.left = `${newX}px`;
+
+  // แปลงตำแหน่งจุดเป็น scroll position
+  const percent = (newX - lineRect.left) / lineRect.width;
+  const maxScroll = document.body.scrollWidth - window.innerWidth;
+  window.scrollTo(percent * maxScroll, 0);
+});
+
+window.addEventListener('scroll', updateActiveBox);
+
+function updateActiveBox() {
+  const boxes = document.getElementById('box');
+  const centerX = window.scrollX + window.innerWidth / 2;
+
+  let currentIndex = 0;
+
+  boxes.forEach((box, i) => {
+    const boxStart = box.offsetLeft;
+    const boxEnd = box.offsetLeft + box.offsetWidth;
+    if (centerX >= boxStart && centerX < boxEnd) {
+      currentIndex = i;
+    }
+  });
+
+  // เอาช่องถัดไป
+  let nextIndex = currentIndex + 1;
+  if (nextIndex >= boxes.length) nextIndex = boxes.length - 1;
+
+  boxes.forEach((box, i) => {
+    if (i === nextIndex) {
+      box.classList.add('active');
+    } else {
+      box.classList.remove('active');
+    }
+  });
+}
+</script>
+</script>
+</html>
