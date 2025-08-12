@@ -85,22 +85,48 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
+        .nav-scrolled {
+            background-color: #0F1724;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .nav-scrolled .nav-link {
+            color: #FFFFFF;
+        }
+
+        .nav-scrolled .nav-brand {
+            color: #FFFFFF;
+        }
+
+        .nav-start {
+            background-color: #FFFFFF;
+        }
+
+        .nav-start .nav-link {
+            color: #0F1724;
+        }
+
+        .nav-start .nav-brand {
+            color: #0F1724;
+        }
     </style>
 </head>
 <body class="bg-bg-custom text-text smooth-scroll">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-effect">
+    <nav id="main-nav" class="fixed top-0 w-full z-50 transition-all duration-300 nav-start">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
-                <div class="font-bold text-xl text-surface">InnovateCorp</div>
+                <div class="font-bold text-xl nav-brand">InnovateCorp</div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="text-surface hover:text-accent transition-colors">Home</a>
-                        <a href="#awards" class="text-surface hover:text-accent transition-colors">Awards</a>
-                        <a href="#experience" class="text-surface hover:text-accent transition-colors">Experience</a>
-                        <a href="#team" class="text-surface hover:text-accent transition-colors">Team</a>
-                        <a href="#contact" class="text-surface hover:text-accent transition-colors">Contact</a>
+                        <a href="#home" class="nav-link transition-colors">Home</a> <a href="#awards"
+                            class="nav-link transition-colors">Awards</a> <a href="#experience"
+                            class="nav-link transition-colors">Experience</a> <a href="#team"
+                            class="nav-link transition-colors">Team</a> <a href="#contact"
+                            class="nav-link transition-colors">Contact</a>
                     </div>
                 </div>
             </div>
@@ -426,6 +452,22 @@
     </footer>
 
     <script>
+        // เพิ่มโค้ดนี้
+        const mainNav = document.getElementById('main-nav');
+        const heroSection = document.getElementById('home');
+        const heroHeight = heroSection.offsetHeight;
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > heroHeight - 80) { // -80 คือค่า offset เพื่อให้เปลี่ยนก่อนถึงขอบ
+                mainNav.classList.add('nav-scrolled');
+                mainNav.classList.remove('nav-start');
+            } else {
+                mainNav.classList.remove('nav-scrolled');
+                mainNav.classList.add('nav-start');
+            }
+        });
+
+
         // Smooth scrolling
         function scrollToContact() {
             document.getElementById('contact').scrollIntoView({ 
