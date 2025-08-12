@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovateCorp - Leading Digital Solutions</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0B5FFF',
+                        'secondary': '#00BFA6',
+                        'accent': '#FFD166',
+                        'surface': '#FFFFFF',
+                        'text': '#0F1724',
+                        'bg-custom': '#F6F8FB'
+                    }
+                }
+            }
+        }
+    </script>
+ 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .fade-in-delay {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.3s;
+        }
+        
+        .fade-in-delay-2 {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards 0.6s;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0B5FFF 0%, #00BFA6 100%);
+        }
+        
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-bg-custom text-text smooth-scroll">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-bold text-xl text-surface">InnovateCorp</div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-surface hover:text-accent transition-colors">Home</a>
+                        <a href="#awards" class="text-surface hover:text-accent transition-colors">Awards</a>
+                        <a href="#experience" class="text-surface hover:text-accent transition-colors">Experience</a>
+                        <a href="#team" class="text-surface hover:text-accent transition-colors">Team</a>
+                        <a href="#contact" class="text-surface hover:text-accent transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Section 1: Hero -->
+    <section id="home" class="min-h-screen hero-bg flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in">InnovateCorp</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto fade-in-delay">
+                Transforming businesses through cutting-edge digital solutions and innovative technology
+            </p>
+            <button onclick="scrollToContact()" class="bg-accent hover:bg-yellow-400 text-text px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 fade-in-delay-2">
+                Contact Us
+            </button>
+        </div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-20 left-10 w-4 h-4 bg-accent rounded-full opacity-60 animate-bounce"></div>
+        <div class="absolute bottom-32 right-20 w-6 h-6 bg-surface rounded-full opacity-40 animate-pulse"></div>
+        <div class="absolute top-1/2 left-20 w-2 h-2 bg-secondary rounded-full opacity-70 animate-ping"></div>
+    </section>
+
+    <!-- Section 2: Awards & Achievements -->
+    <section id="awards" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 scroll-animate">Awards & Achievements</h2>
+                <p class="text-xl text-gray-600 scroll-animate">Recognition for our excellence and innovation</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">🏆</div>
+                    <h3 class="text-xl font-semibold mb-2">Best Digital Innovation</h3>
+                    <p class="text-secondary font-medium mb-3">2024</p>
+                    <p class="text-gray-600">Recognized for revolutionary AI-powered solutions that transformed client operations</p>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold mb-2">Excellence in UX Design</h3>
+                    <p class="text-secondary font-medium mb-3">2023</p>
+                    <p class="text-gray-600">Outstanding user experience design that increased client engagement by 300%</p>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">⭐</div>
+                    <h3 class="text-xl font-semibold mb-2">Top Employer Award</h3>
+                    <p class="text-secondary font-medium mb-3">2023</p>
+                    <p class="text-gray-600">Celebrated for creating an exceptional workplace culture and employee satisfaction</p>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">💡</div>
+                    <h3 class="text-xl font-semibold mb-2">Innovation Leader</h3>
+                    <p class="text-secondary font-medium mb-3">2022</p>
+                    <p class="text-gray-600">Leading the industry with breakthrough technologies and forward-thinking solutions</p>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold mb-2">Fastest Growing Company</h3>
+                    <p class="text-secondary font-medium mb-3">2022</p>
+                    <p class="text-gray-600">Achieved 400% growth while maintaining exceptional service quality standards</p>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-8 card-hover scroll-animate">
+                    <div class="text-4xl text-primary mb-4">🌟</div>
+                    <h3 class="text-xl font-semibold mb-2">Customer Choice Award</h3>
+                    <p class="text-secondary font-medium mb-3">2021</p>
+                    <p class="text-gray-600">Highest customer satisfaction ratings in the digital solutions industry</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Experience -->
+    <section id="experience" class="py-20 px-4 bg-surface">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 scroll-animate">Our Experience</h2>
+                <p class="text-xl text-gray-600 scroll-animate">Successful projects that drive business transformation</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-primary">
+                    <div class="text-3xl text-primary mb-4">💻</div>
+                    <h3 class="text-xl font-semibold mb-2">E-commerce Platform Overhaul</h3>
+                    <p class="text-secondary font-medium mb-3">2024</p>
+                    <p class="text-gray-600">Complete redesign and optimization of major retail platform, resulting in 250% increase in conversions</p>
+                </div>
+                
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-secondary">
+                    <div class="text-3xl text-secondary mb-4">🤖</div>
+                    <h3 class="text-xl font-semibold mb-2">AI-Powered Analytics System</h3>
+                    <p class="text-secondary font-medium mb-3">2023</p>
+                    <p class="text-gray-600">Implemented machine learning algorithms that reduced operational costs by 40% for Fortune 500 client</p>
+                </div>
+                
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-accent">
+                    <div class="text-3xl text-accent mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Mobile Banking Application</h3>
+                    <p class="text-secondary font-medium mb-3">2023</p>
+                    <p class="text-gray-600">Developed secure, user-friendly banking app with biometric authentication and real-time transactions</p>
+                </div>
+                
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-primary">
+                    <div class="text-3xl text-primary mb-4">☁️</div>
+                    <h3 class="text-xl font-semibold mb-2">Cloud Migration Project</h3>
+                    <p class="text-secondary font-medium mb-3">2022</p>
+                    <p class="text-gray-600">Successfully migrated enterprise infrastructure to cloud, improving scalability by 500%</p>
+                </div>
+                
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-secondary">
+                    <div class="text-3xl text-secondary mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-2">Brand Identity Redesign</h3>
+                    <p class="text-secondary font-medium mb-3">2022</p>
+                    <p class="text-gray-600">Complete brand transformation including logo, website, and marketing materials for global startup</p>
+                </div>
+                
+                <div class="bg-bg-custom rounded-xl p-8 card-hover scroll-animate border-l-4 border-accent">
+                    <div class="text-3xl text-accent mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-2">Data Visualization Dashboard</h3>
+                    <p class="text-secondary font-medium mb-3">2021</p>
+                    <p class="text-gray-600">Interactive real-time dashboard that transformed how executives make data-driven decisions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Team -->
+    <section id="team" class="py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 scroll-animate">Meet Our Team</h2>
+                <p class="text-xl text-gray-600 scroll-animate">The brilliant minds behind our success</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8">
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">SA</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Kanyapak Ngampimolsri</h3>
+                    <h3 class="text-xl font-semibold mb-1">672110225</h3>
+                    <p class="text-secondary font-medium mb-3">CEO & Founder</p>
+                    <p class="text-gray-600 text-sm mb-4">Visionary leader with 15+ years in digital transformation and business strategy</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-secondary to-accent rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">MC</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Dhananon Javanicha </h3>
+                    <h3 class="text-xl font-semibold mb-1">67211045</h3>
+                    <p class="text-secondary font-medium mb-3">CTO</p>
+                    <p class="text-gray-600 text-sm mb-4">Full-stack developer and AI specialist driving our technical innovation forward</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent to-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">ER</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Sorawit Homthong</h3>
+                    <h3 class="text-xl font-semibold mb-1">672110245</h3>
+                    <p class="text-secondary font-medium mb-3">Head of Design</p>
+                    <p class="text-gray-600 text-sm mb-4">Creative director with expertise in UX/UI design and user research methodologies</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                
+                
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">LT</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Siraphop Khatchamat </h3>
+                    <h3 class="text-xl font-semibold mb-1">672110163</h3>
+                    <p class="text-secondary font-medium mb-3">Marketing Director</p>
+                    <p class="text-gray-600 text-sm mb-4">Strategic marketer with deep expertise in digital campaigns and brand development</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-accent to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">KW</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Pacharasorn Khumprakong</h3>
+                    <h3 class="text-xl font-semibold mb-1">672110148</h3>
+                    <p class="text-secondary font-medium mb-3">Data Scientist</p>
+                    <p class="text-gray-600 text-sm mb-4">Analytics expert turning complex data into actionable business insights and strategies</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                <div class="bg-surface rounded-xl shadow-lg p-6 text-center card-hover scroll-animate">
+                    <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">NP</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Naruedon Mueangaudon </h3>
+                    <h3 class="text-xl font-semibold mb-1"> 672110147</h3>
+                    <p class="text-secondary font-medium mb-3">Project Manager</p>
+                    <p class="text-gray-600 text-sm mb-4">Agile expert ensuring seamless project delivery and exceptional client satisfaction</p>
+                    <a href="#" target="_blank" class="inline-block bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">View Portfolio</a>
+                </div>
+                
+                
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Contact -->
+    <section id="contact" class="py-20 px-4 bg-bg-custom">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4 scroll-animate">Get In Touch</h2>
+                <p class="text-xl text-gray-600 scroll-animate">Ready to transform your business? Let's start the conversation</p>
+            </div>
+            
+            <div class="bg-surface rounded-2xl shadow-xl p-8 scroll-animate">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" onclick="handleSubmit(event)" class="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Contact Info -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="scroll-animate">
+                    <div class="text-3xl text-primary mb-4">📧</div>
+                    <h3 class="font-semibold mb-2">Email Us</h3>
+                    <p class="text-gray-600">hello@innovatecorp.com</p>
+                </div>
+                <div class="scroll-animate">
+                    <div class="text-3xl text-secondary mb-4">📞</div>
+                    <h3 class="font-semibold mb-2">Call Us</h3>
+                    <p class="text-gray-600">+1 (555) 123-4567</p>
+                </div>
+                <div class="scroll-animate">
+                    <div class="text-3xl text-accent mb-4">📍</div>
+                    <h3 class="font-semibold mb-2">Visit Us</h3>
+                    <p class="text-gray-600">123 Innovation St, Tech City</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text text-surface py-12 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="text-2xl font-bold mb-4">InnovateCorp</div>
+            <p class="text-gray-300 mb-6">Transforming businesses through innovation</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-gray-300 hover:text-accent transition-colors">LinkedIn</a>
+                <a href="#" class="text-gray-300 hover:text-accent transition-colors">Twitter</a>
+                <a href="#" class="text-gray-300 hover:text-accent transition-colors">GitHub</a>
+                <a href="#" class="text-gray-300 hover:text-accent transition-colors">Instagram</a>
+            </div>
+            <p class="text-gray-400 text-sm">&copy; 2024 InnovateCorp. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Scroll animations
+        function observeElements() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('animate');
+                        }, index * 100);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.scroll-animate').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Form handling
+        function handleSubmit(event) {
+            event.preventDefault();
+            const button = event.target;
+            const originalText = button.textContent;
+            
+            button.textContent = 'Sending...';
+            button.disabled = true;
+            
+            // Simulate form submission
+            setTimeout(() => {
+                button.textContent = 'Message Sent!';
+                button.style.backgroundColor = '#00BFA6';
+                
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.disabled = false;
+                    button.style.backgroundColor = '';
+                    event.target.closest('form').reset();
+                }, 2000);
+            }, 1000);
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            observeElements();
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.getElementById('home');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+    </script>
+
+</body>
+</html>
