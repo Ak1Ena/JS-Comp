@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Inn</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <style>
+    /* Background Gradient Animation */
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    body {
+      background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+    }
+
+    #Hi {
+      font-size: 4rem;
+    }
+
+    /* Section styling & scroll reveal */
+    section {
+      padding: 4rem 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Section titles */
+    h2.section-title {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    h2.section-title::after {
+      content: "";
+      display: block;
+      width: 60px;
+      height: 3px;
+      background-color: #fff;
+      margin: 0.5rem auto 0;
+      border-radius: 2px;
+      opacity: 0.7;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.05) rotateZ(1deg);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+
+    /* Skill badges */
+    .skill-badge {
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 0.5rem 1rem;
+      margin: 0.3rem;
+      display: inline-block;
+      font-weight: 600;
+      color: #fff;
+      transition: background 0.3s ease;
+    }
+
+    .skill-badge:hover {
+      background: #fff;
+      color: #764ba2;
+      cursor: default;
+    }
+
+    /* Contact button pulse animation */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+
+    .btn-contact {
+      margin-top: 2rem;
+      padding: 0.8rem 3rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      border-radius: 50px;
+      background-color: #fff;
+      color: #764ba2;
+      border: none;
+      animation: pulse 2.5s infinite;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .btn-contact:hover {
+      animation: none;
+      background-color: #667eea;
+      color: #fff;
+    }
+
+    /* Typing animation styles */
+    #typing {
+      font-size: 1.8rem;
+      border-right: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: fit-content;
+      margin: 0 auto 1rem auto;
+      min-height: 2.2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Intro Section -->
+  <section id="intro" class="container text-center">
+    <h1 id="Hi">Hi I'm Inn</h1>
+    <div id="typing"></div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="py-5 text-light" style="background-image: url('img/School.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+           
+    <div class="container">
+      <h2 class="text-center mb-5">Education</h2>
+      <div class="row justify-content-center">
+
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Yupparaj Wittayalai School</h4>
+              <h6 class="card-subtitle mb-2">Science-Math Program</h6>
+              <h6 class="card-text">2018 - 2021</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Yupparaj Wittayalai School</h4>
+              <h6 class="card-subtitle mb-2">Science-Math Program</h6>
+              <h6 class="card-text">2021 - 2024</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Chiang Mai University</h4>
+              <h5 class="card-subtitle mb-2 ">College of Arts Media and Technology</h5>
+              <h6 class="card-text">2024 - Now</h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="container">
+    <h2 class="section-title">Project</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>เว็บไซต์ Portfolio</h5>
+          <p>สร้างเว็บไซต์ส่วนตัวด้วย Bootstrap และ CSS Animation ที่สวยงามและตอบสนองการใช้งานมือถือ</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>แอปพลิเคชันมือถือ</h5>
+          <p>แอปสำหรับจัดการงานและแจ้งเตือนแบบเรียลไทม์ที่ใช้งานง่ายและรวดเร็ว</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card p-3">
+          <h5>ระบบจัดการข้อมูล</h5>
+          <p>ระบบหลังบ้านสำหรับจัดการฐานข้อมูลลูกค้าและรายงาน ด้วยความปลอดภัยและมีประสิทธิภาพ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="container">
+    <h2 class="section-title">Activities</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Ac</h4>
+              <h6 class="card-subtitle mb-2">Ac</h6>
+              <h6 class="card-text">Ac</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Ac</h4>
+              <h6 class="card-subtitle mb-2">Ac</h6>
+              <h6 class="card-text">Ac</h6>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-5 mb-4">
+          <div class="card bg-dark border-light shadow-lg">
+            <div class="card-body">
+              <h4 class="card-title">Ac</h4>
+              <h5 class="card-subtitle mb-2 ">C</h5>
+              <h6 class="card-text"></h6>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container text-center">
+    <h2 class="section-title">Skill</h2>
+    <div class="d-flex flex-wrap justify-content-center">
+      <span class="skill-badge">HTML</span>
+      <span class="skill-badge">CSS</span>
+      <span class="skill-badge">JavaScript</span>
+      <span class="skill-badge">Bootstrap</span>
+      <span class="skill-badge">Node.js</span>
+      <span class="skill-badge">SQL</span>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container text-center">
+    <h2 class="section-title">Contact me</h2>
+    <p>สนใจร่วมงานหรือสอบถามเพิ่มเติม</p>
+    <button class="btn btn-contact" onclick="alert('ไม่รับงาน จะนอน')">Contact me</button>
+  </section>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Scroll reveal function
+    const sections = document.querySelectorAll('section');
+    function revealSections() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealSections);
+    window.addEventListener('load', revealSections);
+
+    // Typing animation
+    const textToType = [
+      "Full-stack developer",
+      "Chief Technology Officer",
+      "Working at Innovate Corp"
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let currentText = "";
+    const typingElement = document.getElementById('typing');
+    const typingSpeed = 100; // ms per char
+    const pauseTime = 1500; // ms pause before erase
+
+    function type() {
+      if (charIndex < textToType[index].length) {
+        currentText += textToType[index].charAt(charIndex);
+        typingElement.textContent = currentText;
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else {
+        setTimeout(erase, pauseTime);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        currentText = currentText.slice(0, -1);
+        typingElement.textContent = currentText;
+        charIndex--;
+        setTimeout(erase, typingSpeed / 2);
+      } else {
+        index = (index + 1) % textToType.length;
+        setTimeout(type, typingSpeed);
+      }
+    }
+
+    setTimeout(type, 1000);
+  </script>
+
+</body>
+
+</html>
