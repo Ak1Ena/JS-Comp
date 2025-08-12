@@ -21,7 +21,7 @@ function changeName() {
 
     currentIndex = (currentIndex + 1) % names.length;
     nameEl.classList.remove('fade-out');
-  }, 2000);
+  }, 500);
 }
 
 
@@ -56,3 +56,25 @@ const card = document.getElementsByClassName('card');
 // card.addEventListener('mouseleave', () => {
 //   card.style.transform = 'rotateX(0deg) rotateY(0deg)';
 // });
+
+
+//observer
+function observeElements() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('animate');
+        }, index * 100);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.scroll-animate').forEach(el => {
+    observer.observe(el);
+  });
+}
+observeElements();

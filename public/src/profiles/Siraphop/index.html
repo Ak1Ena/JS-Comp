@@ -8,62 +8,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assent/css/style.css" />
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="./assent/css/animation.css">
 
-</head>
-
-<body>
-  <div id="app">
-    <header class="header-container">
-      <ul>
-        <li><a href="#about-me">About Me</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </header>
-
-    <div id="hero">
-      <h1>HELLO I'M<br /><span id="name"></span></h1>
-      <a target="_blank" href="https://github.com/Ak1Ena" id="github">github/Ak1Ena</a>
-    </div>
-</div>
-<section id="about-me">
-  <div class="container">
-    <h2>About Me</h2>
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Front Side</h2>
-          <p>This is front content</p>
-        </div>
-        <div class="flip-card-back">
-          <h2>Back Side</h2>
-          <p>This is back content</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-      
-    </div>
-  </section>
-  <section id="skills">
-    <div class="container">
-      <model-viewer src="./model/html.glb" 
-      auto-rotate 
-       min-camera-orbit="auto 75deg auto"
-        max-camera-orbit="auto 75deg auto"
-         disable-zoom 
-         camera-controls
-          touch-action
-           camera-target="0em 0em 0em"
-        camera-orbit="90deg  75deg 3m" id="html-logo">
-      </model-viewer>
-    </div>
-  </section>
-  <section id="contact"></section>
-
-  <script type="module">
+    <script type="module">
     import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
     const pc = particlesCursor({
@@ -86,6 +33,123 @@
 
 
   </script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="header-container">
+      <ul>
+        <li><a href="../../../index.html">Home</a></li>
+        <li><a href="#about-me">Info</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <div id="hero">
+      <h1>HELLO I'M<br /><span id="name"></span></h1>
+      <a target="_blank" href="https://github.com/Ak1Ena" id="github">github/Ak1Ena</a>
+    </div>
+</div>
+<section id="about-me" >
+  <div class="container scroll-animate">
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+
+          <img src="./img/myself.webp" id="myself-img">
+          <section class="my-details">
+            <h1>SIRAPHOP KHATCHATMAT</h1>
+            <h1>AGE : 18</h1>
+            <h1>FACULTY: CAMT</h1>
+            <h1>MAJOR : DII</h1>
+          </section>
+        </div>
+        <div class="flip-card-back">
+          <h2>DETAILS</h2>
+          <p>CONTACT</p>
+          <ul class="contact-details">
+            <li>
+              GITHUB : Ak1Ena
+            </li>
+            <li>
+              EMAIL : sirapop_kh@cmu.ac.th
+            </li>
+            <li>
+              PHONE : 0628135769
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  <section id="skills">
+    
+    <h1 class="head-skills scroll-animate">Skills</h1>
+      <hr class="hr-skills scroll-animate">
+      <div class="container">
+      
+      <div class="card-skills scroll-animate">
+        <model-viewer src="./model/html.glb" auto-rotate min-camera-orbit="auto 75deg auto" max-camera-orbit="auto 75deg auto"
+          disable-zoom camera-controls touch-action camera-target="0em 0em 0em" camera-orbit="90deg  75deg 3m" id="html-logo">
+        </model-viewer>
+      </div>
+      
+    </div>
+  </section>
+  <section id="projects" class="scroll-animate">
+    <h1 id="project-title">Projects</h1>
+    <hr />
+
+    <div class="container scroll-animate" >
+      <div class="card   ">
+        <img src="https://via.placeholder.com/300x180" alt="Card Image" class="card-img" />
+        <div class="card-content">
+          <h3 class="card-title">หัวข้อการ์ด</h3>
+          <p class="card-description">
+            นี่คือตัวอย่างเนื้อหาภายในการ์ด สามารถใส่ข้อความ หรือรายละเอียดต่าง ๆ ได้
+          </p>
+          <a href="#" class="card-button">อ่านเพิ่มเติม</a>
+        </div>
+      </div>
+      <div class="card  ">
+        <img src="https://via.placeholder.com/300x180" alt="Card Image" class="card-img" />
+        <div class="card-content">
+          <h3 class="card-title">หัวข้อการ์ด</h3>
+          <p class="card-description">
+            นี่คือตัวอย่างเนื้อหาภายในการ์ด สามารถใส่ข้อความ หรือรายละเอียดต่าง ๆ ได้
+          </p>
+          <a href="#" class="card-button">อ่านเพิ่มเติม</a>
+        </div>
+      </div>
+      <div class="card   ">
+        <img src="https://via.placeholder.com/300x180" alt="Card Image" class="card-img" />
+        <div class="card-content">
+          <h3 class="card-title">หัวข้อการ์ด</h3>
+          <p class="card-description">
+            นี่คือตัวอย่างเนื้อหาภายในการ์ด สามารถใส่ข้อความ หรือรายละเอียดต่าง ๆ ได้
+          </p>
+          <a href="#" class="card-button">อ่านเพิ่มเติม</a>
+        </div>
+      </div>
+      <div class="card   ">
+        <img src="https://via.placeholder.com/300x180" alt="Card Image" class="card-img" />
+        <div class="card-content">
+          <h3 class="card-title">หัวข้อการ์ด</h3>
+          <p class="card-description">
+            นี่คือตัวอย่างเนื้อหาภายในการ์ด สามารถใส่ข้อความ หรือรายละเอียดต่าง ๆ ได้
+          </p>
+          <a href="#" class="card-button">อ่านเพิ่มเติม</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contact"></section>
+
+
 
   <script src="./assent/js/main.js"></script>
 
