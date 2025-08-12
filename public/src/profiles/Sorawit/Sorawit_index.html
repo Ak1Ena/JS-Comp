@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Profile Dashboard – Desktop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="Sorawit.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Left: Profile -->
+    <aside class="panel profile">
+      <div class="avatar-wrap lg">
+        <div class="avatar"><img src="https://i.pravatar.cc/240?img=15" alt="avatar" /></div>
+      </div>
+      <h1 class="title">Muhammad Aqsam</h1>
+      <div class="handle">@maqsam</div>
+
+      <div class="stats grid-4">
+        <div class="stat"><div class="icon">💬</div><div class="num">3.5k</div></div>
+        <div class="stat"><div class="icon">📷</div><div class="num">359</div></div>
+        <div class="stat"><div class="icon">🧩</div><div class="num">620</div></div>
+        <div class="stat"><div class="icon">📸</div><div class="num">1.6k</div></div>
+      </div>
+
+      <div class="info-card">
+        <div class="info">
+          <div class="row">📍 Bahawalpur, Pakistan</div>
+          <div class="row">📅 Joined on Feb 11, 2024</div>
+          <div class="row">🎂 30.10.2002 · Product Designer</div>
+          <div class="row">💡 Dev by Day | Design Wizard by Night</div>
+        </div>
+      </div>
+
+      <div class="info-card follow">
+        <div>
+          <div class="badge">GitHub</div>
+          <div class="muted">@m-aqsam</div>
+        </div>
+        <button id="followBtn" class="btn-pill">Follow</button>
+      </div>
+    </aside>
+
+    <!-- Center: Links & Tabs -->
+    <main class="panel content">
+      <div class="link-cards">
+        <article class="link">
+          <div class="top"><span class="chip" data-copy="#emailText">Copy</span></div>
+          <div id="emailText" class="strong">maqsam1155@gmail.com</div>
+          <small>คลิก Copy เพื่อคัดลอก</small>
+        </article>
+        <article class="link">
+          <div class="top"><span class="chip open" data-open="https://facebook.com/">Open</span></div>
+          <div class="strong">@m_aqsam</div>
+          <small>เปิดโปรไฟล์ Facebook</small>
+        </article>
+      </div>
+
+      <div class="tabs" id="tabs">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="photos">Photos</button>
+        <button class="tab" data-filter="music">Music</button>
+        <button class="tab" data-filter="videos">Videos</button>
+      </div>
+
+      <div class="grid gallery" id="gallery">
+        <a class="tile" data-type="photos" href="#"><img src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=600&auto=format&fit=crop" alt="p1"></a>
+        <a class="tile" data-type="photos" href="#"><img src="https://images.unsplash.com/photo-1520975922284-9bcd70a3a479?q=80&w=600&auto=format&fit=crop" alt="p2"></a>
+        <a class="tile" data-type="photos" href="#"><img src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=600&auto=format&fit=crop" alt="p3"></a>
+        <a class="tile" data-type="music" href="#"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600&auto=format&fit=crop" alt="m1"></a>
+        <a class="tile" data-type="music" href="#"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=600&auto=format&fit=crop" alt="m2"></a>
+        <a class="tile" data-type="music" href="#"><img src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=600&auto=format&fit=crop" alt="m3"></a>
+        <a class="tile" data-type="videos" href="#"><img src="https://images.unsplash.com/photo-1459184070881-58235578f004?q=80&w=600&auto=format&fit=crop" alt="v1"></a>
+        <a class="tile" data-type="videos" href="#"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=600&auto=format&fit=crop" alt="v2"></a>
+        <a class="tile" data-type="videos" href="#"><img src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=600&auto=format&fit=crop" alt="v3"></a>
+      </div>
+    </main>
+
+    <!-- Right: Preview / Extras -->
+    <aside class="panel side">
+      <div class="card preview">
+        <div class="avatar-wrap sm"><div class="avatar"><img src="https://i.pravatar.cc/120?img=15" alt=""/></div></div>
+        <div class="title sm">Quick Preview</div>
+        <p class="muted">การ์ดตัวอย่างสำหรับวางวิดเจ็ตเพิ่มเติม เช่น Timeline, Activity, หรือ Notifications</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="Sorwait_script.js"></script>
+</body>
+</html>
