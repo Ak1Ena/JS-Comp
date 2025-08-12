@@ -74,9 +74,7 @@
             transform: translateY(0);
         }
         
-        .hero-bg {
-            background: linear-gradient(135deg, #0B5FFF 0%, #00BFA6 100%);
-        }
+
         
         .smooth-scroll {
             scroll-behavior: smooth;
@@ -117,7 +115,7 @@
             <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto fade-in-delay">
                 Transforming businesses through cutting-edge digital solutions and innovative technology
             </p>
-            <button onclick="scrollToContact()" class="bg-accent hover:bg-yellow-400 text-text px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 fade-in-delay-2">
+            <button onclick="scrollToContact()" class="bg-accent hover:bg-white text-text hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 fade-in-delay-2 border border-white-500 ">
                 Contact Us
             </button>
         </div>
@@ -498,13 +496,8 @@
         });
 
         // Add parallax effect to hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.getElementById('home');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
+        
+
     </script>
 
 </body>
