@@ -1,0 +1,59 @@
+#education {
+	/* height: 400vh; */
+  /* background: black; */
+  color: white;
+}
+
+
+
+
+.header-section {
+  margin: 100px auto 0;
+}
+
+svg {
+  max-width: 600px;
+  overflow: visible;
+  margin-top: 60vh;
+}
+
+.ball {
+  fill: white;
+  visibility: hidden;
+}
+
+/* .line {
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+} */
+text {
+  fill: white;
+  font-size: 15px;
+  font-family: "Signika Negative", sans-serif; 
+  visibility: hidden;
+}
+
+#school{
+    border: 2px solid white;
+    background-color: transparent;
+    border-radius: 15px;
+    width: 30%;
+    height: 20%;
+    position: absolute;
+    color: white;
+    top: 15vw;
+    left: 1000px;
+    visibility: hidden;
+}
+#school > h1{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 38px;
+    padding-left: 20px;
+}
+#school > p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    padding-left: 22px;
+
+}

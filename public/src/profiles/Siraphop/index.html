@@ -7,10 +7,17 @@
   <title>Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assent/css/style.css" />
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="./assent/css/animation.css">
+  <link rel="stylesheet" href="./assent/css/education.css">
 
-    <script type="module">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/DrawSVGPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/GSDevTools.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/MotionPathPlugin.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script type="module">
     import { particlesCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js'
 
     const pc = particlesCursor({
@@ -53,72 +60,127 @@
       <h1>HELLO I'M<br /><span id="name"></span></h1>
       <a target="_blank" href="https://github.com/Ak1Ena" id="github">github/Ak1Ena</a>
     </div>
-</div>
-<!-- ABOUT ME  -->
-<section id="about-me" >
-  <div class="container scroll-animate">
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
+  </div>
+  <!-- ABOUT ME  -->
+  <section id="about-me">
+    <div class="container scroll-animate">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
 
-          <img src="./img/myself.webp" id="myself-img">
-          <section class="my-details">
-            <h1>SIRAPHOP KHATCHATMAT</h1>
-            <h1>AGE : 18</h1>
-            <h1>FACULTY: CAMT</h1>
-            <h1>MAJOR : DII</h1>
-          </section>
-        </div>
-        <div class="flip-card-back">
-          <h2>DETAILS</h2>
-          <p>CONTACT</p>
-          <ul class="contact-details">
-            <li>
-              GITHUB : Ak1Ena
-            </li>
-            <li>
-              EMAIL : sirapop_kh@cmu.ac.th
-            </li>
-            <li>
-              PHONE : 0628135769
-            </li>
-          </ul>
+            <img src="./img/myself.webp" id="myself-img">
+            <section class="my-details">
+              <h1>SIRAPHOP KHATCHATMAT</h1>
+              <h1>AGE : 19</h1>
+              <h1>FACULTY: CAMT</h1>
+              <h1>MAJOR : DII</h1>
+            </section>
+          </div>
+          <div class="flip-card-back">
+            <h2>Contact</h2>
+            <ul class="contact-details">
+              <li>
+                GITHUB : Ak1Ena
+              </li>
+              <li>
+                EMAIL : sirapop_kh@cmu.ac.th
+              </li>
+              <li>
+                TEL : 0XXXXXXXX
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Education -->
- <section id="education">
+  </section>
+  <!-- Education -->
+  <section id="education">
+<!-- learn how this was made at https://www.youtube.com/watch?v=ersN5fk8py0 FULL VIDEO -->
+<svg id="svg" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 600 1200">
+  <path class="line01 line" d="M 10 200  600 200" ></path>
+  <path class="line02 line" d="M 10 400  600 400" ></path>
+  <path class="line03 line" d="M 10 600  600 600" ></path>
+  <path class="line04 line" d="M 10 800  600 800" ></path>
+  <text class="text01" x="30" y="190">2017</text>
+  <text class="text01" x="420" y="190">Middle-Schol</text>
+  <text class="text02" x="30" y="390">2020</text>
+    <text class="text02" x="450" y="390">High School</text>
+  <text class="text03" x="30" y="590">2024</text>
+  <text class="text03" x="420" y="590">UNIVERSITY ( YEAR 1 )</text>
+  <text class="text04" x="230" y="790">NOW ( YEAR 2 )</text>
 
- </section>
-<!-- SKILLS -->
+  <path class="theLine" 
+        d="M -5,0
+           Q 450 230 300 450 
+           T 130 750
+           Q 100 850 300 1000
+           T 150 1200"
+        fill="none" stroke="white" stroke-width="10px" />
+  
+  
+  
+  <circle class="ball ball01" r="20" cx="50" cy="100"></circle>
+  <circle class="ball ball02" r="20" cx="278" cy="201"></circle>
+  <circle class="ball ball03" r="20" cx="327" cy="401"></circle>
+  <circle class="ball ball04" r="20" cx="203" cy="601"></circle>
+  <circle class="ball ball05" r="20" cx="128" cy="801"></circle>
+
+</svg>
+<div id="school">
+  <h1 id="school-title">SawanananWitaya School</h1>
+  <p id="grade">GPA : </p>
+</div>
+
+
+
+
+
+<!-- <header>
+   <a href="https://greensock.com/scrolltrigger">
+     <img class="greensock-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/scroll-trigger-logo-light.svg" width="200" height="64" />
+  </a> 
+</header> -->
+  </section>
+  <!-- SKILLS -->
   <section id="skills">
-    
+
     <h1 class="head-skills scroll-animate">Skills</h1>
-      <div class="container">
+    <div class="container">
       <!-- <div class="card-skills scroll-animate"> -->
-        <!-- <model-viewer src="./model/html.glb" auto-rotate min-camera-orbit="auto 75deg auto" max-camera-orbit="auto 75deg auto"
+      <!-- <model-viewer src="./model/html.glb" auto-rotate min-camera-orbit="auto 75deg auto" max-camera-orbit="auto 75deg auto"
           disable-zoom camera-controls touch-action camera-target="0em 0em 0em" camera-orbit="90deg  75deg 3m" id="html-logo">
         </model-viewer> -->
-        
-      <!-- </div> -->
-      <div class="skill scroll-animate"><h1>HTML</h1></div>
-      <div class="skill scroll-animate"><h1>CSS</h1></div>
-      <div class="skill scroll-animate"><h1>JSS</h1></div>
-      <div class="skill scroll-animate"><h1>JAVA</h1></div>
-      <div class="skill scroll-animate"><h1>PYTHON</h1></div>
-      <div class="skill scroll-animate"><h1>KOTLIN</h1></div>
 
-      
+      <!-- </div> -->
+      <div class="skill scroll-animate">
+        <h1>HTML</h1>
+      </div>
+      <div class="skill scroll-animate">
+        <h1>CSS</h1>
+      </div>
+      <div class="skill scroll-animate">
+        <h1>JSS</h1>
+      </div>
+      <div class="skill scroll-animate">
+        <h1>JAVA</h1>
+      </div>
+      <div class="skill scroll-animate">
+        <h1>PYTHON</h1>
+      </div>
+      <div class="skill scroll-animate">
+        <h1>KOTLIN</h1>
+      </div>
+
+
     </div>
   </section>
 
-<!-- PROJECTS -->
+  <!-- PROJECTS -->
   <section id="projects" class="scroll-animate">
     <h1 id="project-title">Projects</h1>
 
-    <div class="container scroll-animate" >
+    <div class="container scroll-animate">
       <div class="card   ">
         <img src="./img/project/DII-Compound.png" alt="Card Image" class="card-img" />
         <div class="card-content">
@@ -162,21 +224,22 @@
     </div>
   </section>
   <section id="contact">
-  <div class="contact-container">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear from you! Fill out the form below.</p>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>
-</section>
+    <div class="contact-container">
+      <h2>Contact Us</h2>
+      <p>We’d love to hear from you! Fill out the form below.</p>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
 
 
   <script src="./assent/js/main.js"></script>
+  <script type="module" src="./assent/js/gsap.js"></script>
 
 </body>
 
