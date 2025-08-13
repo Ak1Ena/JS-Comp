@@ -150,12 +150,19 @@ html,
 }
 
 .flip-card:hover .flip-card-inner {
-  transform: rotateY(-180deg);
+  /* transform: rotateY(-180deg); */
+  animation-name: flip;
+  animation-duration: 2.5s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .flip-card-front,
 .flip-card-back {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
@@ -165,6 +172,7 @@ html,
   color: white;
   font-family: sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
 }
 
 .flip-card-front {
@@ -183,9 +191,14 @@ html,
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  overflow: auto;}
+  overflow: auto;
+}
  
-
+.flip-card:not(:hover) .flip-card-inner {
+  animation-name: flipBack;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
 
 #myself-img{
   display: flex;
@@ -229,7 +242,6 @@ html,
 /*PROJECTS*/
 #projects {
   width: 100%;
-  height: 50rem;
 }
 #projects > h1 {
   display: flex;
@@ -242,6 +254,7 @@ html,
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  align-items: center;
   
 }
 
@@ -249,7 +262,8 @@ html,
   background-color: rgba(255, 255, 255, 0.15);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 12px;
-  width: 320px;
+  width: 365px;
+  /* height: 30rem; */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   color: #fff;
@@ -257,6 +271,11 @@ html,
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   margin: 20px 1em;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .card:hover {

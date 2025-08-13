@@ -57,6 +57,60 @@ const card = document.getElementsByClassName('card');
 //   card.style.transform = 'rotateX(0deg) rotateY(0deg)';
 // });
 
+// scrolling line
+//  const scrollSection = document.getElementById('education');
+//   const path = document.getElementById('motionPath');
+//   const circle = document.getElementById('movingCircle');
+//   const popup = document.getElementById('popup');
+
+//   const triggers = [
+//     { x: 200, y: 75, message: 'นี่คือจุดแรก' },
+//     { x: 600, y: 75, message: 'นี่คือจุดที่สอง' },
+//   ];
+
+//   const pathLength = path.getTotalLength();
+
+//   scrollSection.addEventListener('scroll', () => {
+//     const scrollTop = scrollSection.scrollTop;
+//     const scrollHeight = scrollSection.scrollHeight - scrollSection.clientHeight;
+//     const scrollPercent = Math.min(scrollTop / scrollHeight, 1);
+
+//     const point = path.getPointAtLength(scrollPercent * pathLength);
+//     circle.setAttribute('cx', point.x);
+//     circle.setAttribute('cy', point.y);
+
+//     const svgRect = path.ownerSVGElement.getBoundingClientRect();
+
+//     const circleScreenX = svgRect.left + (point.x / 800) * svgRect.width;
+//     const circleScreenY = svgRect.top + (point.y / 200) * svgRect.height;
+
+//     let foundTrigger = null;
+//     for (const trig of triggers) {
+//       const trigScreenX = svgRect.left + (trig.x / 800) * svgRect.width;
+//       const trigScreenY = svgRect.top + (trig.y / 200) * svgRect.height;
+
+//       const dx = trigScreenX - circleScreenX;
+//       const dy = trigScreenY - circleScreenY;
+//       const dist = Math.sqrt(dx * dx + dy * dy);
+
+//       if (dist < 30) {
+//         foundTrigger = { ...trig, screenX: trigScreenX, screenY: trigScreenY };
+//         console.log(1)
+//         break;
+//       }
+//     }
+
+//     if (foundTrigger) {
+//       popup.style.display = 'block';
+//       // ปรับตำแหน่ง popup ให้สัมพันธ์กับ #scroll-section (เพราะ popup เป็น absolute ใน section)
+//       const sectionRect = scrollSection.getBoundingClientRect();
+//       popup.style.left = `${foundTrigger.screenX - sectionRect.left + 20}px`;
+//       popup.style.top = `${foundTrigger.screenY - sectionRect.top - 30}px`;
+//       popup.textContent = foundTrigger.message;
+//     } else {
+//       popup.style.display = 'none';
+//     }
+//   });
 
 //observer
 function observeElements() {
