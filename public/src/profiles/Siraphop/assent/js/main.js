@@ -1,5 +1,5 @@
 // JavaScript
-const names = ['SIRAPHOP', 'FULLSTACK DEVELOPER'];
+const names = ['SIRAPHOP  KHATCHAMAT', 'FULLSTACK DEVELOPER'];
 const nameEl = document.getElementById('name');
 
 let currentIndex = 0;
