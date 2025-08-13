@@ -54,21 +54,23 @@ function updateActiveBox() {
   });
 
   // เอาช่องถัดไป
-  let nextIndex = currentIndex + 1;
+  let nextIndex = currentIndex+1;
   if (nextIndex >= boxes.length) nextIndex = boxes.length - 1;
 
   boxes.forEach((box, i) => {
     if (i === nextIndex) {
+      box.classList.add('active');
+    }else if(i === currentIndex) {
       box.classList.add('active');
     } else {
       box.classList.remove('active');
     }
   });
 }
-const speed = 80;
+const speed = 100;
 let i = 0;
 
-const opentext = "Welcome to Naruedon's Profile"
+const opentext = "Welcome to My Profile."
 const openTypewriterEl = document.getElementById("opentypewriter");
 
 function openTypeWriter() {
@@ -81,7 +83,7 @@ function openTypeWriter() {
       i = 0;
       openTypewriterEl.innerHTML = "";
       openTypeWriter();
-    }, 1000);
+    }, 3000);
   }
 }
 openTypeWriter();

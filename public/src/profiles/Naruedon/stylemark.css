@@ -1,10 +1,14 @@
+@import url('https://fonts.cdnfonts.com/css/minecraftia');
+
 body {
     margin: 0;
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    background: #f0f0f0;
-    background-color: rgb(152, 208, 92);
+    background: linear-gradient(to bottom, skyblue 70%, rgb(152, 208, 92) 70%);
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    font-family: 'Minecraftia', sans-serif;
   }
   .content {
     position: relative;
@@ -12,12 +16,13 @@ body {
   .box {
     display: inline-block;
     width: 100%;
-    height: 100vh;
-    line-height: 100vh;
+    height: 80vh;
+    line-height: 100%;
     justify-content: center; /* จัดกึ่งกลางแนวนอน */
     align-items: center;
     text-align: center;
     color: rgb(0, 0, 0);
+    
   }
 
   
@@ -40,19 +45,26 @@ body {
     transform: translate(-50%, -50%);
     width: 64px;
     height: 64px;
-    background: url(png/1.png) no-repeat center center;
+    background: url(png/cs.png) no-repeat center center;
     border-radius: 50%;
     cursor: grab;
     z-index: 1001;
   }
     .marker:active {
         cursor: grabbing;
-        animation: move 1s ease-in-out infinite alternate;
+        animation: move 3s ease-in-out infinite alternate;
     }
 
     @keyframes move {
-        0%{background: url(png/1.png) no-repeat center center;}
-        25%{background: url(png/1move.png) no-repeat center center;}
-        50%{background: url(png/2move.png) no-repeat center center;}
-        75%{background: url(png/2.png) no-repeat center center;}
+        0%{background: url(png/cs.png) no-repeat center center;}
+        10%{background: url(png/csm.png) no-repeat center center;}
+        20%{background: url(png/csbm.png) no-repeat center center;}
+        30%{background: url(png/csm.png) no-repeat center center;}
+        40%{background: url(png/csb.png) no-repeat center center;}
+        50%{background: url(png/csbm.png) no-repeat center center;}
+        60%{background: url(png/cscm.png) no-repeat center center;}
+        70%{background: url(png/csc.png) no-repeat center center;}
+        80%{background: url(png/csm.png) no-repeat center center;}
+        90%{background: url(png/csbm.png) no-repeat center center;}
+        100%{background: url(png/csb.png) no-repeat center center;}
     }
