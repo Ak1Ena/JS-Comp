@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dino Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="game-container" class="visible">
+        <h3 class="instruction-text">Play to go to my portfolio</h3>
+        <br>
+        <div id="game">
+            <div id="dino"></div>
+            <div class="cactus" id="cactus1"></div>
+            <div class="cactus" id="cactus2"></div>
+            <div id="ground"></div>
+        </div>
+
+        <div id="score">Score: 0</div>
+    </div>
+
+    <div id="cursor-dino"></div>
+
+    <div id="portfolio" class="hidden">
+        <header>
+            <button class="hamburger-menu" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="tabs">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </header>
+
+        <main>
+
+
+            <div id="walking-character"></div>
+            <section id="home" class="section active">
+                <h1 class="welcome-text">Welcome to My Portfolio</h1>
+                <div class="dino-micro"></div>
+                </section>
+
+            <section id="about" class="section">
+                <h2>About Me</h2>
+
+                <div class="profile-picture">
+                    <img src="Image/Phofile/456.jpg" alt="Pacharaasorn Khumprakong">
+                </div>
+
+                <div class="panels-container">
+                    <div class="about-panel">
+                        <h3>Me</h3>
+                        <p><strong>Name:</strong> Pacharaasorn Khumprakong</p>
+                        <p><strong>Nickname:</strong> Fiat</p>
+                        <p><strong>Date of birth:</strong> 12 September 2548</p>
+                        <p><strong>Nationality:</strong> Thai</p>
+                        <p><strong>Religion:</strong> Buddha</p>
+                    </div>
+                    <div class="about-panel">
+                        <h3>Education</h3>
+                        <p><strong>School:</strong> RangseeVittayaSchool</p>
+                        <p><strong>Period:</strong> From 2551 - 2566</p>
+                        <p><strong>University:</strong> ollege of Art, Media, and Technology : Chiang Mai University</p>
+                        <p><strong>Period:</strong> From 2567 - Present</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+                <div class="timeline">
+                    <div class="event">
+                        <h3>University Fresher</h3>
+                        <p class="date">2023 - 2024</p>
+                        <p>Established a strong foundation in key digital industry skills, including programming logic
+                            and UI/UX design, while enhancing communication abilities through foundational coursework in
+                            English and modern studies.</p>
+                        <br>
+                        <h3>GPAX: 3.50</h3>
+                    </div>
+                    <div class="event">
+                        <h3>University Fresher 2</h3>
+                        <p class="date">2024</p>
+                        <p>Advanced technical abilities by studying digital industry infrastructure, information
+                            systems, and the principles of animation. Demonstrated strong performance by developing
+                            practical digital solutions and achieving excellent grades across key subjects.</p>
+                        <br>
+                        <h3>GPAX: 3.61</h3>
+                    </div>
+                    <div class="event">
+                        <h3>Backend & Full-Stack Development</h3>
+                        <p class="date">2025 - Present</p>
+                        <p>Gained proficiency in backend development with Spring Boot and database management, while
+                            strengthening fundamentals in JavaScript and Data Structures. This knowledge was expanded
+                            into full-stack capabilities by learning React to build modern, responsive user interfaces.
+                        </p>
+                        <br>
+                        <h3>GPAX: ????</h3>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section">
+                <h2>Skills</h2>
+                <div class="skill">
+                    <label>HTML/CSS</label>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%" data-width="70%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>JavaScript</label>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%" data-width="80%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>php</label>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%" data-width="60%"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <label>UI/UX Design</label>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%" data-width="40%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="section">
+                <h2>Gallery</h2>
+                <div class="gallery-container">
+                    <div class="gallery-slider">
+                        <div class="project">
+                            <img src="Image/Certificate/C1.jpg" alt="Project 1">
+                            <div class="overlay">
+                                <h3>Programable line tracing</h3>
+                                <p>ได้เข้าแข่งขัน Programable line tracing รุ่น micro:bit Senior ระหว่างวันที่ 3-4
+                                    กันยายน พ.ศ.2565</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C4.jpg" alt="Project 2">
+                            <div class="overlay">
+                                <h3>Web Design and Development</h3>
+                                <p>ได้ผ่านการอบรบเชิงปฎิบัติการแบบออนไลน์ หลักสูตร Web Design and Development
+                                    จากกระทรวงคึกษาธิการ และ การีนา</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C3.jpg" alt="Project 3">
+                            <div class="overlay">
+                                <h3>CAMT Open House Open Heart</h3>
+                                <p>ได้เข้าอบรมเชิงปฏิบัติการ กิจกรรม CAMT Open House Open Heart
+                                    ของทางวิทยาลัยศิลปะสื่อและเทคโนโลยี มหาวิทยาลัยเชียงใหม่</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C6.jpg" alt="Project 4">
+                            <div class="overlay">
+                                <h3>แข่งขันการสร้างเกม</h3>
+                                <p>ได้รับรางวัลระดับเหรียญทอง ในการแข่งขันการสร้างเกมสร้างสรรค์จากคอมพิวเตอร์
+                                    งานศิลปหัตถกรรม ครั้งที่ 70</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C14.jpg" alt="Project 5">
+                            <div class="overlay">
+                                <h3>MJU AR</h3>
+                                <p>ได้ผ่านการอบรมโครงการพัฒนาทักษะด้านเทคโนโลยีและนวัตกรรมแบบ AR
+                                    ระดับเบื้องต้นเพื่อเตรียมเข้าสู่จักรวาลนฤมิต</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C17.jpg" alt="Project 6">
+                            <div class="overlay">
+                                <h3>Dii Camp UX Ui Design</h3>
+                                <p>ได้เข้าร่วมการอบรมเชิงปฏิบัติการค่ายเสริมทักษะDii Camp UX Ui Design
+                                    ของทางวิทยาลัยศิลปะสื่อและเทคโนโลยี มหาวิทยาลัยเชียงใหม่</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image/Certificate/C19.jpg" alt="Project 7">
+                            <div class="overlay">
+                                <h3>Young Computer Scientist Camp 2023</h3>
+                                <p>ได้เข้าร่วมโครงการ Young Computer Scientist Camp 2023 ในหัวข้อ CHATBOT
+                                    ของทางภาควิชาวิทยาการคอมพิวเตอร์ ของมหาวิทยาลัยเชียงใหม่</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image\ActivityPhoto\1.jpg" alt="Project 8">
+                            <div class="overlay">
+                                <h3>Staff เกี่ยวกับหุ่นยนต์</h3>
+                                <p>เข้าร่วมกิจกรรมวันวิทยาศาสตร์ เป็น Staff เกี่ยวกับหุ่นยนต์ และโปรแกรม โดยใช้ Arduino
+                                    ทำงาน มีกิจกรรมเกมบังคับหุ่นยนต์ชนกันแบบซูมโม่และ แขนกล</p>
+                            </div>
+                        </div>
+                        <div class="project">
+                            <img src="Image\ActivityPhoto\2.jpg" alt="Project 9">
+                            <div class="overlay">
+                                <h3>Staff ในชั้นอนุบาล เกี่ยวกับหุ่นยนต์</h3>
+                                <p>เข้าร่วมกิจกรรมวันวิทยาศาสตร์ เป็น Staff ในชั้นอนุบาล เกี่ยวกับหุ่นยนต์ และ Arduino
+                                    เผยแพร่ข้อมูลให้แก่น้องน้อง</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="arrow left-arrow">‹</button>
+                    <button class="arrow right-arrow">›</button>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact Me</h2>
+                <form id="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+
+                <div class="contact-info-details">
+                    <p><strong>Tel:</strong> <a href="tel:091-8511-609">091-8511-609</a></p>
+                    <p><strong>FB:</strong> <a href="https://www.facebook.com/pacharasorn.khumprakong"
+                            target="_blank">Pacharasorn Khumprakong</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:zxiuy123@gmail.com">zxiuy123@gmail.com</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="dino-footer"></div>
+            <p>&copy; 2025 Dino Portfolio. FiatTy Edition.</p>
+        </footer>
+    </div>
+
+    <audio id="jump-sound" src="Sound/jump.wav"></audio>
+    <audio id="die-sound" src="Sound/die.wav"></audio>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
