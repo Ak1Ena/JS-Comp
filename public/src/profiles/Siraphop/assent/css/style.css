@@ -233,10 +233,30 @@ html,
 }
 
 
-#skills>.container {
-  display: flex;
-  align-items: center;
+
+#skills > .container {
+  display: grid;
+  grid-template-columns: repeat(5, auto); 
   justify-content: center;
+  gap: 20px;
+}
+
+.skill {
+  color: white;
+  padding: 0px 20px;
+  border: 1px solid white;
+  border-radius: 55px;
+}
+
+.skill > h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 5px auto;
+}
+
+.skill:hover{
+  color: black;
+  background-color: white;
+  cursor: pointer;
 }
 
 /*PROJECTS*/
@@ -248,14 +268,18 @@ html,
   color: white;
   justify-content: center;
   align-content: center;
-  
+
 }
+
 #projects > .container {
+
+
+  padding-bottom: 20px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  
+  align-items: stretch;
 }
 
 .card {
@@ -272,7 +296,7 @@ html,
   cursor: pointer;
   margin: 20px 1em;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   flex-direction: column;

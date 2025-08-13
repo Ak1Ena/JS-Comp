@@ -66,5 +66,21 @@
         transform: rotateY(0deg);
     }   
 }
-
+@keyframes corner-spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  20% {
+    transform: rotateX(10deg) rotateY(10deg); /* เอียงจากมุม */
+  }
+  50% {
+    transform: rotateX(360deg) rotateY(10deg); /* หมุนรอบ */
+  }
+  80% {
+    transform: rotateX(10deg) rotateY(10deg); /* กลับมาเอียง */
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg); /* กลับมาเดิม */
+  }
+}
 /* Education */
