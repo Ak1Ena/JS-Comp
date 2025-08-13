@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: #f0f0f0;
+    background-color: rgb(152, 208, 92);
+  }
+  .content {
+    position: relative;
+  }
+  .box {
+    display: inline-block;
+    width: 100%;
+    height: 100vh;
+    line-height: 100vh;
+    justify-content: center; /* จัดกึ่งกลางแนวนอน */
+    align-items: center;
+    text-align: center;
+    color: rgb(0, 0, 0);
+  }
+
+  
+  .line {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 4px;
+    background: black;
+    z-index: 1000;
+  }
+
+    /* จุดที่ลากได้ */
+  .marker {
+    position: fixed;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 64px;
+    height: 64px;
+    background: url(png/1.png) no-repeat center center;
+    border-radius: 50%;
+    cursor: grab;
+    z-index: 1001;
+  }
+    .marker:active {
+        cursor: grabbing;
+        animation: move 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes move {
+        0%{background: url(png/1.png) no-repeat center center;}
+        25%{background: url(png/1move.png) no-repeat center center;}
+        50%{background: url(png/2move.png) no-repeat center center;}
+        75%{background: url(png/2.png) no-repeat center center;}
+    }
