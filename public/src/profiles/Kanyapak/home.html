@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  }
+
+  .hero-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: -1;
+  }
+
+  .stage{
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .right-half{
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: auto;
+  }
+
+  .scribble-wrap{
+    width: min(46vw, 900px);
+    aspect-ratio: 16/6;
+  }
+
+  svg{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .helloText{
+    font-family: "Homemade Apple", cursive;
+    font-size: clamp(90px, 20vw, 90px);
+    letter-spacing: .04em;
+    paint-order: stroke fill;
+    fill: transparent;
+    stroke: #030303;
+    stroke-width: 2.2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1600;
+    stroke-dashoffset: 1600;
+    animation:
+      draw 4.4s ease-in-out forwards,
+      wobble 2s ease-in-out 0s infinite alternate;
+    filter: url(#paper-wobble);
+  }
+
+  .helloText.fill-in{
+    animation:
+      draw 4.4s ease-in-out forwards,
+      ink 0.9s ease-in 4.2s forwards,
+      wobble 2s ease-in-out 0s infinite alternate;
+  }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes ink { from { fill: transparent; } to { fill: #050505; } }
+  @keyframes wobble { 0% { transform: rotate(-0.2deg) translateY(0px); } 100% { transform: rotate(0.2deg) translateY(0.6px); } }
+
+  .soft-glow{
+    position: absolute;
+    inset: auto 6vw 12vh auto;
+    width: 111px;
+    height: 111px;
+    background: radial-gradient(50% 50% at 50% 50%, rgba(255,255,255,.08), transparent 65%);
+    border-radius: 50%;
+    filter: blur(20px);
+  }
+
+  .visit-btn {
+    margin-top: -80px;
+    padding: 0;
+    font-size: clamp(30px, 8vw, 20px);
+    font-weight: bolder;
+    color: #1e3a8a;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .visit-btn:hover {
+    color: #2c5282;
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 680px){
+    .right-half{ width: 80vw; }
+    .visit-btn {
+      margin-top: 4px;
+      padding: 0;
+      font-size: clamp(30px, 12vw, 20px);
+      font-weight: bold;
+      color: #1e3a8a;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .visit-btn:hover {
+      color: #2c5282;
+      transform: translateY(-2px);
+    }
+  }
+</style>
+</head>
+<body>
+
+<img class="hero-image" src="pic3.png" alt="Event presentation photo">
+
+<div class="stage">
+  <div class="right-half">
+    <div class="scribble-wrap">
+      <svg viewBox="0 0 1200 420" role="img" aria-label="Welcome to my website">
+        <defs>
+          <filter id="paper-wobble">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="noise" />
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="0.6" xChannelSelector="R" yChannelSelector="G" />
+          </filter>
+        </defs>
+
+        <text x="50%" y="55%" text-anchor="middle" class="helloText">
+          Welcome to my website
+        </text>
+        <text x="50%" y="55%" text-anchor="middle" class="helloText fill-in">
+          Welcome to my website
+        </text>
+      </svg>
+    </div>
+
+    <a href="port001.html" class="visit-btn">visit website here</a>
+  </div>
+  <div class="soft-glow"></div>
+</div>
+
+<script>
+  const texts = document.querySelectorAll('.helloText');
+  texts.forEach((el) => {
+    const length = 1400 + Math.round(Math.random() * 500);
+    el.style.strokeDasharray = length;
+    el.style.strokeDashoffset = length;
+    if(el.classList.contains('fill-in')){
+      el.style.animationDelay = '0s, 4.2s, 0s';
+    }
+  });
+
+  setTimeout(() => {
+    texts.forEach(el => el.classList.add('fill-in'));
+  }, 4400);
+</script>
+
+</body>
+</html>
