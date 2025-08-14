@@ -167,3 +167,63 @@ body {
   font-weight: bold;
   transition: width 2s ease-in-out;
 }
+
+.experience-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.experience-images img {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.slider-btn {
+  background-color: rgba(255,255,255,0.6);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
+
+.image-row {
+  display: flex;
+  gap: 20px;
+  flex-direction: column; /* จัดกลางแนวนอน */
+  align-items: center;   /* ให้ข้อความซ้อนด้านล่างอยู่ตรงกัน */
+}
+
+.image-container {
+  width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.image-container img {
+  width: 500px;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}

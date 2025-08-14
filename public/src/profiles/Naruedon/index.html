@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="stylemark.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
 </head>
 <body>
@@ -18,7 +19,7 @@
 <div class="content">
 
   <div id = "open" class="box" data-index="0">
-      <h1 id = "opentypewriter" class="text-6xl text-white font-bold mb-0"></h1>
+      <h1 id = "opentypewriter" class="text-5xl text-white font-bold mb-0"></h1>
   </div>
 
   <div id = "name" class="box" data-index="1">
@@ -33,7 +34,7 @@
     <section id="education" class="py-5 text-light" >
            
     <div class="container">
-      <h2 class="text-center mb-5">Education</h2>
+      <h2 class="text-center mb-4">Education</h2>
       <div class="row justify-content-center">
 
         <div class="col-md-5 mb-4">
@@ -74,7 +75,7 @@
   <div id = "box" class="box" data-index="3">
 <section id="skills" class="py-5 text-light">
   <div class="container">
-    <h2 class="text-center mb-5">Skills</h2>
+    <h2 class="text-center mb-4">Skills</h2>
     <div class="row justify-content-center">
 
       <div class="col-md-5 mb-4">
@@ -109,17 +110,84 @@
   </div>
 </section>
 </div>
+
   <div id = "box" class="box" data-index="4">
-    <section id="experience" class="py-5 text-light" >
-           
+    <section id="experience" class="py-5 text-light">
+      <div class="container text-center">
+      <h2 class="mb-4">Experience</h2>
+
+        <div class="experience-slider">
+        <button class="slider-btn prev"></button>
+          <div class="experience-images">
+          <img id="exp-image" src="png/exp1.png" alt="Experience 1">
+          </div>
+        <button class="slider-btn next"></button>
+      </div>
+
+      <h5 id="exp-caption" class="text-lg text-white mt-2 mb-2">
+      Certificate of Student Poster Contest at the DPSTS.
+      </h5>
+      </div>
+    </section>
+  </div>
+
+<div id="box" class="box" data-index="5">
+  <section id="Project" class="py-5 text-light">
     <div class="container">
-      <h2 class="text-center mb-5">Experience</h2>
+      <h2 class="text-center mb-4">Project</h2>
+
+      <div class="image-row">
+        <div class="image-container">
+        <img src="png/DII_GEN6_COMPOUNDSEC.png" alt="ภาพตัวอย่าง" />
+          <div class="caption">DII-GEN6-COMPOUNDSEC</div>
+        </div>
+        <div class="image-container">
+        <img src="png/Webtech.png" alt="ภาพตัวอย่าง" />
+          <div class="caption">Webtech Project Gameshop </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="box" class="box" data-index="6">
+  <section id="Contact" class="py-5 text-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact</h2>
+
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 justify-items-center">
+
+        <!-- Email -->
+        <div class="w-full max-w-[500px] h-[100px] bg-red-500 rounded-xl px-6 flex items-center gap-6 hover:bg-red-600 hover:shadow-xl transition duration-300">
+          <i class="fas fa-envelope fa-2x"></i>
+          <a href="mailto:marknarudon@gmail.com" class="text-white text-gl hover:underline"> : marknarudon@gmail.com</a>
+        </div>
+
+        <!-- Phone -->
+        <div class="w-full max-w-[500px] h-[100px] bg-green-500 rounded-xl px-6 flex items-center gap-6 hover:bg-green-600 hover:shadow-xl transition duration-300">
+          <i class="fas fa-phone fa-3x"></i>
+          <p class="text-white text-gl hover:underline"> : 084-367-7079</p>
+        </div>
+
+        <!-- Facebook -->
+        <div class="w-full max-w-[500px] h-[100px] bg-blue-500 rounded-xl px-6 flex items-center gap-6 hover:bg-blue-600 hover:shadow-xl transition duration-300">
+          <i class="fab fa-facebook fa-3x"></i>
+          <p class="text-white text-gl bg-white/20 px-4 py-2 rounded hover:bg-white/40 transition duration-300"> : Narudon Mueangaudon</p>
+        </div>
+
+        <!-- Discord -->
+        <div class="w-full max-w-[500px] h-[100px] bg-indigo-500 rounded-xl px-6 flex items-center gap-6 hover:bg-indigo-600 hover:shadow-xl transition duration-300">
+          <i class="fab fa-discord fa-3x"></i>
+          <a href="https://discord.com/users/490049537864368128" target="_blank" class="text-white text-gl bg-white/20 px-4 py-2 rounded hover:bg-white/40 transition duration-300">Add Friend</a>
+        </div>
+      
+      </div>
       
     </div>
   </section>
-  </div>
-  <div id = "Project" class="box" data-index="5"><div class="text-3xl font-semibold mb-4">Project</div></div>
-  <div id = "Contact" class="box" data-index="6"><div class="text-3xl font-semibold mb-4">Contact</div></div>
+</div>
+  
 </div>
 
 </body>

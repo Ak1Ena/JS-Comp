@@ -67,6 +67,8 @@ function updateActiveBox() {
     }
   });
 }
+
+//หน้าแรก
 const speed = 100;
 let i = 0;
 
@@ -87,18 +89,8 @@ function openTypeWriter() {
   }
 }
 openTypeWriter();
-const text = "Student at Chiang Mai University, College of Arts Media and Technology, Digital Industry Integration.";
-const typewriterEl = document.getElementById("typewriter");
 
-    function typeWriter() {
-      if (i < text.length) {
-        typewriterEl.innerHTML = text.substring(0, i + 1) + '<span class="cursor"></span>';
-        i++;
-        setTimeout(typeWriter, speed);
-      } else {
-        typewriterEl.innerHTML = text;
-      }
-}
+// หน้า skills
 document.addEventListener("DOMContentLoaded", () => {
   const bars = document.querySelectorAll(".progress-bar");
   bars.forEach(bar => {
@@ -111,3 +103,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 200);
   });
 });
+
+// หน้า Experience
+const images = [
+  { src: "png/exp1.png", caption: "Certificate of Student Poster Contest at the DPSTS." },
+  { src: "png/exp2.png", caption: "Certificate of Student Oral Contest at the DPSTS." },
+  { src: "png/exp3.jpg", caption: "Presentation at the Science Fair Yupparaj Wittayalai School." }
+];
+
+let currentIndex = 0;
+
+const expImage = document.getElementById("exp-image");
+const expCaption = document.getElementById("exp-caption");
+
+document.querySelector(".prev").addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  updateSlider();
+});
+
+document.querySelector(".next").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  updateSlider();
+});
+
+function updateSlider() {
+  expImage.src = images[currentIndex].src;
+  expImage.alt = `Experience ${currentIndex + 1}`;
+  expCaption.textContent = images[currentIndex].caption;
+}
+
+function interpolateColor(color1, color2, factor) {
+    const c1 = color1.match(/\d+/g).map(Number);
+    const c2 = color2.match(/\d+/g).map(Number);
+    const result = c1.map((v, i) => Math.round(v + (c2[i] - v) * factor));
+    return `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
+}
+
+function updateBackground() {
+    const now = new Date();
+    const totalSeconds = now.getMinutes() * 60 + now.getSeconds(); // วินาทีในชั่วโมงปัจจุบัน
+    const cycle = 1 * 60; // 12 นาที = 720 วินาที
+    let factor = (totalSeconds % cycle) / cycle;
+
+    // ทำให้ factor เป็น ping-pong (0→1→0)
+    if (Math.floor(totalSeconds / cycle) % 2 === 1) {
+        factor = 1 - factor;
+    }
+
+    const topStart = 'rgb(135, 206, 235)';    // skyblue
+    const topEnd = 'rgb(25, 25, 112)';        // midnightblue
+    const bottomStart = 'rgb(152, 208, 92)';  // green
+    const bottomEnd = 'rgb(0, 50, 0)';        // dark green
+
+    const topColor = interpolateColor(topStart, topEnd, factor);
+    const bottomColor = interpolateColor(bottomStart, bottomEnd, factor);
+
+    document.body.style.background = `linear-gradient(to bottom, ${topColor} 65%, ${bottomColor} 65%)`;
+    document.body.style.backgroundRepeat = 'repeat-x';
+    document.body.style.backgroundSize = 'auto 100%';
+}
+
+// อัปเดตทุกวินาที
+setInterval(updateBackground, 100);
+updateBackground();
