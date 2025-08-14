@@ -36,8 +36,11 @@ function updateBox(
     school.style.animation = animation;
 }
 function hideBox() {
-    school.style.visibility = "hidden";
-    school.style.opacity = 0;
+  console.log("hide");
+  
+        school.style.animation = "none";
+    void school.offsetWidth; // trigger reflow
+    school.style.animation = "fadeOutDown 0.2s ease-in-out forwards";
 }
 
 gsap.registerPlugin(ScrollTrigger, DrawSVGPlugin, MotionPathPlugin, GSDevTools);
@@ -60,11 +63,11 @@ const pulses = gsap.timeline({
     ,onReverseComplete: () => updateBox("SawanananWitaya School","3.85")
 }, 1.36)
 .to(".ball04, .text03", {
-    onStart: () => updateBox("ChaingMai University","3.91")
-    ,onReverseComplete: () => updateBox("ChaingMai University","3.91")
+    onStart: () => updateBox("ChiangMai University","3.91")
+    ,onReverseComplete: () => updateBox("ChiangMai University","3.91")
 }, 1.92)
 .to(".ball05, .text04", {
-    onStart: () => updateBox("ChaingMai University")
+    onStart: () => updateBox("ChiangMai University")
 }, 2.48)
 
 const main = gsap.timeline({
