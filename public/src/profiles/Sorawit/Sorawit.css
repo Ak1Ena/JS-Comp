@@ -27,6 +27,10 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+body {
+  cursor: url('./IMG/j1.png ') 8 8, auto;
+}
+
 
 /* Back button */
 .btn-back {
