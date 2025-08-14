@@ -128,15 +128,25 @@ textarea {
     background-color: #333;
 }
 
-#score {
-    margin-top: 20px;
-    font-size: 24px;
+#score{
+  margin-top:18px;
+  padding:.35rem .9rem;
+  border:2px solid #333;
+  border-radius:10px;
+  background:linear-gradient(#fff, #f3f3f3);
+  box-shadow:4px 4px 0 #bbb;
+  letter-spacing:.5px;
 }
 
-.instruction-text {
-    margin-top: 1.5rem;
-    font-size: 1.2rem;
-    color: #555;
+
+.instruction-text{
+  position:relative; opacity:.85; letter-spacing:.6px;
+}
+@keyframes nudgeY{ 0%,100%{ transform:translateY(0)} 50%{ transform:translateY(-3px)} }
+.instruction-text::after{
+  content:"  (Press Space / Arrow Up)";
+  margin-left:.25rem; opacity:.75; animation:nudgeY 1.8s ease-in-out infinite;
+  font-size:.95em;
 }
 
 /* ===============================
@@ -188,7 +198,16 @@ header.scrolled {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     transition: all 0.3s ease;
+    position:relative; isolation:isolate;
 }
+
+#tabs a::after{
+  content:""; position:absolute; left:8px; right:8px; bottom:.3rem; height:4px;
+  background:#333; transform:scaleX(0); transform-origin:left;
+  transition:transform .25s ease; border-radius:2px;
+}
+
+#tabs a:hover::after, #tabs a.active::after{ transform:scaleX(1); }
 
 #tabs a:hover {
     transform: translateY(-3px);
@@ -852,6 +871,24 @@ footer {
 }
 @keyframes gameSlideUp{
   to { transform: translateY(-24px); opacity: 0; }
+}
+
+/* ===============================
+   กรอบเกม แบบ CRT
+   =============================== */
+#game{
+  border-radius: 14px;
+  border: 2px solid #111;
+  box-shadow: 0 10px 30px rgba(0,0,0,.18), inset 0 2px 18px rgba(0,0,0,.12);
+  background: #f7f9ff;
+}
+#game::after{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.2),transparent 40%),
+    repeating-linear-gradient(0deg, rgba(0,0,0,.03) 0 2px, rgba(0,0,0,0) 2px 4px);
+  mix-blend-mode:multiply; pointer-events:none;
 }
 
 

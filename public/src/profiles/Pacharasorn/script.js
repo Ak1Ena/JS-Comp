@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
         requestAnimationFrame(updateRunner);
     })();
 
-    // === ABOUT EPIC REVEAL (enter/exit only via IntersectionObserver) ===
+    //  EPIC REVEAL  
     (function () {
         const about = document.getElementById('about');
         if (!about) return;
