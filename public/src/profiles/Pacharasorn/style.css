@@ -18,7 +18,7 @@ body {
     font-family: 'Courier New', monospace;
 
     /* subtle animated bg */
-    background: linear-gradient(-45deg, #e8e8e8, #f8f8f8, #e8e8e8, #f0f0f0);
+    background: linear-gradient(#f8f8f8, #f8f8f8, #f8f8f8, #f8f8f8);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
     cursor: none;
