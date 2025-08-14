@@ -97,6 +97,12 @@ ScrollTrigger.create({
   onLeaveBack: () => hideBox()
 });
 
+document.querySelector('a[href="#app"]').addEventListener('click', (e) => {
+  hideBox();
+});
+document.querySelector('a[href="#about-me"]').addEventListener('click', (e) => {
+  hideBox();
+});
 //GSDevTools.create({animation:main})
 
 
