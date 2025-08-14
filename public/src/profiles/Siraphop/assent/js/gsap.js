@@ -74,8 +74,8 @@ const main = gsap.timeline({
   scrollTrigger: {
     trigger: "#svg",
     scrub: true,
-    start: "top center",
-    end: "bottom center",
+    start: "top+=10 center",
+    end: "bottom+=10 center",
     onLeave: () => hideBox(), // เรียก hideBox() เมื่อย้ายออกจากพื้นที่
     onLeaveBack: () => hideBox(), // เรียก hideBox() เมื่อย้อนเกินบนสุด
     onEnterBack: () => updateBox("ChaingMai University") // ถ้าต้องการให้ fade in กลับเมื่อเลื่อนลง
@@ -89,7 +89,13 @@ const main = gsap.timeline({
   alignOrigin:[0.5, 0.5],
 }, duration:4}, 0)
 .add(pulses, 0)
-
+ScrollTrigger.create({
+  trigger: "#svg",
+  start: "bottom bottom",
+  onEnter: () => hideBox(),
+  onLeave: () => hideBox(),
+  onLeaveBack: () => hideBox()
+});
 
 //GSDevTools.create({animation:main})
 
