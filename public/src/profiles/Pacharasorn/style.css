@@ -8,6 +8,16 @@
     font-family: 'Courier New', monospace;
 }
 
+/* ===============================
+   0. layer ordering for game box
+=================================*/
+#game .bg       { position:absolute; inset:0; z-index:0; pointer-events:none; }
+#game .hills    { z-index:1; }
+#ground         { z-index:3; }  /* พื้น */
+.cactus         { z-index:4; }  
+#dino           { z-index:5; }  
+
+
 body {
     overflow-x: hidden;
     color: #333;
@@ -610,6 +620,240 @@ footer {
     transition: transform 0.2s ease-out;
 }
 
+/* ===============================
+   13. Scroll Runner
+=================================*/
+/* #scroll-runner-vertical{
+  position: fixed;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  pointer-events: none;
+  z-index: 200;
+}
+#scroll-runner-vertical .runner{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px; height: 48px;
+  background: url('Image/DinoSprites_doux.gif') center/contain no-repeat;
+  transition: transform .06s linear;
+} */
+
+/* ===============================
+   14. Dino footprints
+=================================*/
+.footprint{
+  position: fixed;
+  width: 14px; height: 10px;
+  background: radial-gradient(#333 40%, transparent 41%);
+  opacity: .65;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  filter: blur(.2px);
+  transition: opacity .5s linear, transform .5s ease;
+  z-index: 21;
+}
+
+/* ===============================
+   15. Typewriter
+=================================*/
+.welcome-text {
+  font-weight: 700;
+  min-height: 2.6em;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #333;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+.welcome-text {
+  animation: blinkCursor .8s step-end infinite;
+}
+
+/* ===============================
+   16. EPIC REVEAL
+=================================*/
+#about {
+  position: relative;
+  overflow: clip;
+}
+
+#about.about-epic::before {
+  content:'';
+  position:absolute; inset:0;
+  background: radial-gradient(120px 220px at var(--sx, -20%) 50%, rgba(255,255,255,0.65), rgba(255,255,255,0.0) 60%) ,
+              radial-gradient(220px 120px at 60% 50%, rgba(255,255,255,0.15), rgba(255,255,255,0.0) 70%);
+  mix-blend-mode: screen;
+  animation: aboutSweep 1.2s ease forwards;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes aboutSweep {
+  0%   { --sx: -20%; opacity: 0; }
+  10%  { opacity: 1; }
+  100% { --sx: 120%; opacity: 0; }
+}
+
+
+#about .profile-picture,
+#about .about-panel {
+  opacity: 0;
+  transform: translateY(24px) scale(.98);
+  transition: transform .6s cubic-bezier(.2,.9,.2,1), opacity .6s ease;
+}
+
+#about.about-epic .profile-picture,
+#about.about-epic .about-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+#about.about-epic .profile-picture { transition-delay: .05s; }
+#about.about-epic .about-panel:nth-of-type(1) { transition-delay: .15s; }
+#about.about-epic .about-panel:nth-of-type(2) { transition-delay: .28s; }
+
+
+.body-shake {
+  animation: bodyShake .4s ease;
+}
+@keyframes bodyShake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-4px); }
+  40% { transform: translateX(4px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* ===============================
+   16. GAME PARALLAX
+=================================*/
+
+#game {
+  position: relative;
+  overflow: hidden;           
+  background: transparent;
+}
+
+
+#game .bg{
+  position:absolute; inset:0;
+  pointer-events:none;
+}
+
+
+#game .sky{
+  background: linear-gradient(#fcfcff, #eef4ff);
+  z-index: 0;
+}
+
+
+#game .cloud::before,
+#game .cloud::after{
+  content:'';
+  position:absolute;
+  width: 2400px; height: 120px;   
+  left: 0; top: 20px;
+  background:
+    radial-gradient(36px 24px at 40px 40px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(50px 30px at 120px 35px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(40px 26px at 200px 42px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(32px 22px at 280px 44px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(36px 24px at 360px 40px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(50px 30px at 440px 35px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(40px 26px at 520px 42px, #fff 60%, rgba(255,255,255,0) 61%),
+    radial-gradient(32px 22px at 600px 44px, #fff 60%, rgba(255,255,255,0) 61%);
+  filter: drop-shadow(0 6px 2px rgba(0,0,0,.06));
+}
+#game .cloud::after{
+  top: 70px; opacity: .7; transform: scale(.9);
+}
+
+
+#game .cloud-a{ z-index: 2; }
+#game .cloud-b{ z-index: 1; }
+
+@keyframes drift {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-1200px); }
+}
+
+
+#game .cloud::before,
+#game .cloud::after{
+  animation: drift 60s linear infinite;
+  animation-play-state: paused;
+}
+#game .cloud-a::before, #game .cloud-a::after{ animation-duration: 45s; }
+#game.playing .cloud::before, #game.playing .cloud::after{ animation-play-state: running; }
+
+
+#game .hills{
+  z-index: 3;
+  bottom: 20px;                
+}
+#game .hills::before,
+#game .hills::after{
+  content:'';
+  position:absolute; left:0; right:0; bottom:0; height:120px;
+  background:
+    radial-gradient(180px 70px at 200px 100%, #cbd5e1 60%, transparent 61%),
+    radial-gradient(220px 80px at 520px 100%, #cbd5e1 60%, transparent 61%),
+    radial-gradient(200px 76px at 860px 100%, #cbd5e1 60%, transparent 61%),
+    radial-gradient(180px 70px at 1180px 100%, #cbd5e1 60%, transparent 61%);
+  transform: translateX(0);
+  animation: hillsMove 14s linear infinite;
+  animation-play-state: paused;
+}
+#game .hills::after{
+  height: 90px; bottom: 8px;
+  filter: brightness(.9);
+  animation-duration: 20s;     
+}
+@keyframes hillsMove{
+  from{ transform: translateX(0); }
+  to  { transform: translateX(-600px); }
+}
+#game.playing .hills::before,
+#game.playing .hills::after{ animation-play-state: running; }
+
+
+#ground{
+  background-image: repeating-linear-gradient(
+    90deg, rgba(255,255,255,.2) 0 20px, rgba(255,255,255,0) 20px 40px
+  );
+  background-color:#333;
+  z-index: 4;
+  animation: groundScroll 1s linear infinite;
+  animation-play-state: paused;
+}
+@keyframes groundScroll{
+  from{ background-position: 0 0; }
+  to  { background-position: -80px 0; }
+}
+#game.playing #ground{ animation-play-state: running; }
+
+
+#game .run-out{
+  animation: dinoRunOut 1s cubic-bezier(.2,.9,.2,1) forwards;
+}
+@keyframes dinoRunOut{
+  0%   { transform: translateX(0) translateY(0) rotate(0); }
+  20%  { transform: translateX(40px) translateY(-6px) rotate(0); }
+  100% { transform: translateX(520px) translateY(-6px) rotate(0); }
+}
+
+#game-container.slide-up{
+  animation: gameSlideUp .8s ease forwards;
+}
+@keyframes gameSlideUp{
+  to { transform: translateY(-24px); opacity: 0; }
+}
+
 
 /* ===============================
    Responsive for Mobile
@@ -716,7 +960,6 @@ footer {
         width: 15px;
         height: 15px;
     }
-    /* *** END OF FIX *** */
     
     .arrow {
         display: none;
@@ -725,4 +968,23 @@ footer {
     .gallery-slider {
         cursor: grab;
     }
+}
+@media screen and (max-width: 1024px) {
+
+    body {
+        cursor: none;
+    }
+    
+    #cursor-dino {
+        display: none;
+    }
+    
+    a, button {
+        cursor: none;
+    }
+
+
+
+
+
 }
