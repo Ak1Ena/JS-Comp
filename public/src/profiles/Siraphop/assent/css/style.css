@@ -64,6 +64,7 @@ html,
   box-sizing: border-box;
   justify-content: center;
   display: flex;
+  z-index: 9999;
 }
 
 .header-container ul {
@@ -194,7 +195,9 @@ html,
   box-sizing: border-box;
   overflow: auto;
 }
- 
+.flip-card-back h2{
+  font-size: 55px;
+} 
 .flip-card:not(:hover) .flip-card-inner {
   animation-name: flipBack;
   animation-duration: 5s;
