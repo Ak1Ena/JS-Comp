@@ -9,261 +9,130 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <style>
-    /* Background Gradient Animation */
-    @keyframes gradientBG {
-      0% {
-        background-position: 0% 50%;
-      }
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-      50% {
-        background-position: 100% 50%;
-      }
+  <link rel="stylesheet" href="css/Innstyle.css">
 
-      100% {
-        background-position: 0% 50%;
-      }
-    }
-
-    body {
-      background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-    }
-
-    #Hi {
-      font-size: 4rem;
-    }
-
-    /* Section styling & scroll reveal */
-    section {
-      padding: 4rem 1rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Section titles */
-    h2.section-title {
-      font-weight: 700;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-      text-align: center;
-      position: relative;
-    }
-
-    h2.section-title::after {
-      content: "";
-      display: block;
-      width: 60px;
-      height: 3px;
-      background-color: #fff;
-      margin: 0.5rem auto 0;
-      border-radius: 2px;
-      opacity: 0.7;
-    }
-
-    /* Cards */
-    .card {
-      background: rgba(255, 255, 255, 0.15);
-      border: none;
-      color: #fff;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .card:hover {
-      transform: scale(1.05) rotateZ(1deg);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-    }
-
-    /* Skill badges */
-    .skill-badge {
-      background: rgba(255, 255, 255, 0.25);
-      border-radius: 20px;
-      padding: 0.5rem 1rem;
-      margin: 0.3rem;
-      display: inline-block;
-      font-weight: 600;
-      color: #fff;
-      transition: background 0.3s ease;
-    }
-
-    .skill-badge:hover {
-      background: #fff;
-      color: #764ba2;
-      cursor: default;
-    }
-
-    /* Contact button pulse animation */
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-      }
-
-      70% {
-        box-shadow: 0 0 15px 15px rgba(255, 255, 255, 0);
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-      }
-    }
-
-    .btn-contact {
-      margin-top: 2rem;
-      padding: 0.8rem 3rem;
-      font-weight: 600;
-      font-size: 1.2rem;
-      border-radius: 50px;
-      background-color: #fff;
-      color: #764ba2;
-      border: none;
-      animation: pulse 2.5s infinite;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .btn-contact:hover {
-      animation: none;
-      background-color: #667eea;
-      color: #fff;
-    }
-
-    /* Typing animation styles */
-    #typing {
-      font-size: 1.8rem;
-      border-right: 3px solid #fff;
-      white-space: nowrap;
-      overflow: hidden;
-      width: fit-content;
-      margin: 0 auto 1rem auto;
-      min-height: 2.2rem;
-    }
-  </style>
 </head>
 
 <body>
-
+  
   <!-- Intro Section -->
-  <section id="intro" class="container text-center">
-    <h1 id="Hi">Hi I'm Inn</h1>
+  <section id="intro" class="intro-video text-center">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video/Introbg.mp4" type="video/mp4">
+    </video>
+    <h1 id="Hi">I'm Inn</h1>
     <div id="typing"></div>
+    <div><img id="intropic" src="img/Chill.png"></img></div>
+    <div id="profile" class="container profile-section">
+  <div class="profile-image">
+    <img src="img/Inn.jpg" alt="Profile Picture">
+  </div>
+  <div class="profile-info">
+    <div class="detail-list">
+    <p><strong>Name:</strong> Dhananon Javanicha</p>
+    <p><strong>Date of Birth:</strong> 04 January 2006</p>
+    <p><strong>Email:</strong> inn.javanicha@gmail.com</p>
+    <p><strong>Phone:</strong> 0988120755</p>
+    <p><strong>Address:</strong> Chiang Mai, Thailand</p>
+  </div>
+  </div>
   </section>
 
+
+
+  
   <!-- Education Section -->
-  <section id="education" class="py-5 text-light" style="background-image: url('img/School.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center;">
-           
-    <div class="container">
-      <h2 class="text-center mb-5">Education</h2>
-      <div class="row justify-content-center">
-
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Yupparaj Wittayalai School</h4>
-              <h6 class="card-subtitle mb-2">Science-Math Program</h6>
-              <h6 class="card-text">2018 - 2021</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Yupparaj Wittayalai School</h4>
-              <h6 class="card-subtitle mb-2">Science-Math Program</h6>
-              <h6 class="card-text">2021 - 2024</h6>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Chiang Mai University</h4>
-              <h5 class="card-subtitle mb-2 ">College of Arts Media and Technology</h5>
-              <h6 class="card-text">2024 - Now</h6>
-            </div>
-          </div>
-        </div>
-
-      </div>
+  <section id="education" class="py-5 text-light"
+    style="background-image: url('img/School.jpg'); background-size: cover; background-repeat: no-repeat; background-position: center; height: 100%; ">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.3);">
     </div>
+    <h2 class="section-title text-center">Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="card bg-dark border-light shadow-lg">
+          <div class="card-body">
+            <h4 class="card-title">Yupparaj Wittayalai School</h4>
+            <h5 class="card-subtitle mb-2">Science-Math Program</h5>
+            <h6 class="card-text">2018 - 2024</h6>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="card bg-dark border-light shadow-lg">
+          <div class="card-body">
+            <h4 class="card-title">Chiang Mai University</h4>
+            <h5 class="card-subtitle mb-2 ">College of Arts Media and Technology</h5>
+            <h6 class="card-text">2024 - Present</h6>
+          </div>
+        </div>
+      </div>
   </section>
-
 
   <!-- Projects Section -->
-  <section id="projects" class="container">
-    <h2 class="section-title">Project</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>เว็บไซต์ Portfolio</h5>
-          <p>สร้างเว็บไซต์ส่วนตัวด้วย Bootstrap และ CSS Animation ที่สวยงามและตอบสนองการใช้งานมือถือ</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>แอปพลิเคชันมือถือ</h5>
-          <p>แอปสำหรับจัดการงานและแจ้งเตือนแบบเรียลไทม์ที่ใช้งานง่ายและรวดเร็ว</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card p-3">
-          <h5>ระบบจัดการข้อมูล</h5>
-          <p>ระบบหลังบ้านสำหรับจัดการฐานข้อมูลลูกค้าและรายงาน ด้วยความปลอดภัยและมีประสิทธิภาพ</p>
-        </div>
-      </div>
+  <section id="projects" class="project-video">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="video/Jelly&Monster.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+      <h2 class="section-title text-center mb-3">Project</h2>
+      <h2>Jelly & Monster</h2>
+      <h6>The monster can take over the territory of the jelly, but not that Jelly will agree to act alone, the jelly
+        has to invade to collect things to survive.
+        So who is the real invader !?</h6>
+      <p>Inspired by the game PAC-MAN but made it more on the concept of "Invasion" by keeping the theme of the game
+        being Post Apocalypse for example,<br> there is a monster invasion,the map shows the invasion. But keeping the
+        images
+        and characters in games like "Jelly"
+        and "Monster" to be cartoonish and approachable.</p>
+      <a class="btn btn-action" href="https://cozy4urds.itch.io/jelly-monster" target="_blank">Learn More</a>
+
     </div>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="container">
-    <h2 class="section-title">Activities</h2>
-    <div class="row justify-content-center">
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Ac</h4>
-              <h6 class="card-subtitle mb-2">Ac</h6>
-              <h6 class="card-text">Ac</h6>
+<section id="experience" class="py-5 text-light">
+    <h2 class="section-title text-center">Experiences</h2>
+    
+    <div id="experienceCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner text-center">
+
+        <div class="carousel-item active">
+          <div class="card mx-auto" style="max-width: 600px;">
+            <img src="img/Gamejam.jpeg" class="card-img-top" alt="Company 1">
+            <div class="card-body text-center">
+              <h5 class="card-title">HAMSTER HUB GAME JAM 2</h5>
+              <p class="card-text">Project Game Jelly&Monster</p>
             </div>
           </div>
         </div>
 
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Ac</h4>
-              <h6 class="card-subtitle mb-2">Ac</h6>
-              <h6 class="card-text">Ac</h6>
+        <div class="carousel-item">
+          <div class="card mx-auto" style="max-width: 600px;">
+            <img src="img/Game Acadamy.jpg" class="card-img-top" alt="Company 2">
+            <div class="card-body text-center">
+              <h5 class="card-title">Game Acadamy</h5>
+              <p class="card-text">CAMT Summer Courses</p>
             </div>
           </div>
         </div>
-
-        <div class="col-md-5 mb-4">
-          <div class="card bg-dark border-light shadow-lg">
-            <div class="card-body">
-              <h4 class="card-title">Ac</h4>
-              <h5 class="card-subtitle mb-2 ">C</h5>
-              <h6 class="card-text"></h6>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#experienceCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#experienceCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
 
   <!-- Skills Section -->
   <section id="skills" class="container text-center">
@@ -272,17 +141,21 @@
       <span class="skill-badge">HTML</span>
       <span class="skill-badge">CSS</span>
       <span class="skill-badge">JavaScript</span>
-      <span class="skill-badge">Bootstrap</span>
       <span class="skill-badge">Node.js</span>
       <span class="skill-badge">SQL</span>
     </div>
   </section>
 
+  
   <!-- Contact Section -->
   <section id="contact" class="container text-center">
-    <h2 class="section-title">Contact me</h2>
-    <p>สนใจร่วมงานหรือสอบถามเพิ่มเติม</p>
-    <button class="btn btn-contact" onclick="alert('ไม่รับงาน จะนอน')">Contact me</button>
+    <h2 class="section-title">Contact</h2>
+    <div class="social-icons">
+      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="#"><i class="fa-solid fa-envelope"></i></a>
+      <a href="#"><i class="fa-brands fa-line"></i></a>
+    </div>
+    <a class="btn btn-action" href="../../../index.html" target="_blank">Innovate Corp </a>
   </section>
 
   <!-- Bootstrap JS Bundle -->
@@ -307,7 +180,7 @@
     const textToType = [
       "Full-stack developer",
       "Chief Technology Officer",
-      "Working at Innovate Corp"
+      "At Innovate Corp"
     ];
 
     let index = 0;
