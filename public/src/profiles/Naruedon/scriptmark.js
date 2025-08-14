@@ -69,7 +69,7 @@ function updateActiveBox() {
 }
 
 //หน้าแรก
-const speed = 100;
+const speed = 80;
 let i = 0;
 
 const opentext = "Welcome to My Profile."
@@ -85,7 +85,7 @@ function openTypeWriter() {
       i = 0;
       openTypewriterEl.innerHTML = "";
       openTypeWriter();
-    }, 3000);
+    }, 6000);
   }
 }
 openTypeWriter();
@@ -132,11 +132,20 @@ function updateSlider() {
   expCaption.textContent = images[currentIndex].caption;
 }
 
+
+//ระบบสีพื้นหลัง
 function interpolateColor(color1, color2, factor) {
     const c1 = color1.match(/\d+/g).map(Number);
     const c2 = color2.match(/\d+/g).map(Number);
     const result = c1.map((v, i) => Math.round(v + (c2[i] - v) * factor));
     return `rgb(${result[0]}, ${result[1]}, ${result[2]})`;
+}
+
+function updateCloudColor(factor) {
+    const clouds = document.querySelectorAll('.cloud');
+    clouds.forEach(cloud => {
+        cloud.style.filter = `brightness(${1 - 0.5 * factor}) hue-rotate(${50 * factor}deg)`;
+    });
 }
 
 function updateBackground() {
@@ -161,8 +170,52 @@ function updateBackground() {
     document.body.style.background = `linear-gradient(to bottom, ${topColor} 65%, ${bottomColor} 65%)`;
     document.body.style.backgroundRepeat = 'repeat-x';
     document.body.style.backgroundSize = 'auto 100%';
+
+    updateCloudColor(factor);
 }
 
 // อัปเดตทุกวินาที
 setInterval(updateBackground, 100);
 updateBackground();
+
+// nav-dot
+document.addEventListener("DOMContentLoaded", () => {
+  const dots = document.querySelectorAll(".nav-dot");
+  const boxes = document.querySelectorAll(".box");
+  const lineRect = line.getBoundingClientRect();
+
+  // จัดตำแหน่งจุดให้กระจายบนเส้น
+  dots.forEach((dot, i) => {
+    const percent = i / (boxes.length - 1);
+    dot.style.left = `${percent * lineRect.width}px`;
+  });
+
+  // คลิกแล้วเลื่อนไป section + ย้าย marker
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      const target = boxes[i];
+      if (target) {
+        const percent = i / (boxes.length - 1);
+        const newX = lineRect.left + percent * lineRect.width;
+
+        // ย้าย marker
+        marker.style.left = `${newX}px`;
+
+        // เลื่อนไป section
+        window.scrollTo({
+          left: target.offsetLeft,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+});
+
+// เพลง
+const audio = new Audio("music/song.mp3");
+audio.loop = true;
+audio.volume = 0.35;
+
+document.addEventListener("click", () => {
+  audio.play();
+}, { once: true });
