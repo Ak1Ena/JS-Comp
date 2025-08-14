@@ -103,6 +103,19 @@ document.querySelector('a[href="#app"]').addEventListener('click', (e) => {
 document.querySelector('a[href="#about-me"]').addEventListener('click', (e) => {
   hideBox();
 });
+document.querySelector('a[href="#education"]').addEventListener('click', (e) => {
+  hideBox();
+  main.seek(0);
+});
+document.querySelector('a[href="#skills"]').addEventListener('click', (e) => {
+  hideBox();
+});
+document.querySelector('a[href="#projects"]').addEventListener('click', (e) => {
+  hideBox();
+});
+document.querySelector('a[href="#contact"]').addEventListener('click', (e) => {
+  hideBox();
+});
 //GSDevTools.create({animation:main})
 
 
