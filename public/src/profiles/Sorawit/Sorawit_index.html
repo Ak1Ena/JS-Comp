@@ -14,109 +14,114 @@
 <body>
   <!-- Background animation layer -->
   <div class="bg-anim" aria-hidden="true"></div>
-  <button id="backBtn" class="btn-back"  href = "index.html" >← Back</button>
+
+
 
   <div class="app">
     <!-- Left: Profile -->
-    <aside class="panel profile">
+    <aside class="panel profile tilt">
       <div class="avatar-wrap lg">
         <div class="avatar"><img src="./IMG/tel2.jpg" alt="avatar" /></div>
       </div>
-      <h1 class="title">Muhammad Aqsam</h1>
-      <div class="handle">@maqsam</div>
+      <h1 class="title">Sorwit Homthong</h1>
+      <div class="handle">@Sorwait</div>
 
       <div class="stats grid-4">
-        <div class="stat">
+        <div class="stat tilt">
           <div class="icon">💬</div>
           <div class="num">3.5k</div>
         </div>
-        <div class="stat">
+        <div class="stat tilt">
           <div class="icon">📷</div>
           <div class="num">359</div>
         </div>
-        <div class="stat">
+        <div class="stat tilt">
           <div class="icon">🧩</div>
           <div class="num">620</div>
         </div>
-        <div class="stat">
+        <div class="stat tilt">
           <div class="icon">📸</div>
           <div class="num">1.6k</div>
         </div>
       </div>
 
-      <div class="info-card">
+      <div class="info-card tilt">
         <div class="info">
-          <div class="row">📍 Bahawalpur, Pakistan</div>
-          <div class="row">📅 Joined on Feb 11, 2024</div>
-          <div class="row">🎂 30.10.2002 · Product Designer</div>
-          <div class="row">💡 Dev by Day | Design Wizard by Night</div>
+          <div class="row">📍 Chaing Mai</div>
+          <div class="row">📅 Brith on Dec 12, 2005</div>
+          <div class="row">🎂 14.8.2025 · Product</div>
+          <div class="row">💡 Dev by Day | Design by Night</div>
         </div>
       </div>
 
-      <div class="info-card follow">
+      <div class="info-card follow tilt">
         <div>
           <div class="badge">GitHub</div>
-          <div class="muted">@m-aqsam</div>
+          <div class="muted">@Sorawit681/div>
+          </div>
+          <button id="followBtn" class="btn-pill ripple-button">Follow</button>
         </div>
-        <button id="followBtn" class="btn-pill">Follow</button>
-      </div>
     </aside>
 
     <!-- Center: Links & Tabs -->
     <main class="panel content">
       <div class="link-cards">
-        <article class="link hover-pop">
-          <div class="top"><button class="chip" data-copy="#emailText" aria-label="คัดลอกอีเมล">Copy</button></div>
-          <div id="emailText" class="strong">maqsam1155@gmail.com</div>
+        <article class="link hover-pop tilt gradient-border">
+          <div class="top"><button class="chip ripple-button" data-copy="#emailText"
+              aria-label="คัดลอกอีเมล">Copy</button></div>
+          <div id="emailText" class="strong">shxmthxng6@gmail.com</div>
           <small>คลิก Copy เพื่อคัดลอก</small>
         </article>
-        <article class="link hover-pop">
-          <div class="top"><button class="chip open" data-open="https://facebook.com/">Open</button></div>
-          <div class="strong">@m_aqsam</div>
+
+        <article class="link hover-pop tilt gradient-border">
+          <div class="top"><button class="chip open ripple-button"
+              data-open="https://www.facebook.com/sorawit.homthong.2024">Open</button></div>
+          <div class="strong">Sorwait Homthong</div>
           <small>เปิดโปรไฟล์ Facebook</small>
         </article>
       </div>
 
       <div class="tabs" id="tabs" role="tablist" aria-label="สลับหมวดรูปภาพ">
-        <button class="tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-        <button class="tab" data-filter="photos" role="tab" aria-selected="false">Photos</button>
-        <button class="tab" data-filter="music" role="tab" aria-selected="false">Music</button>
-        <button class="tab" data-filter="videos" role="tab" aria-selected="false">Videos</button>
+        <button class="tab active ripple-button" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="tab ripple-button" data-filter="photos" role="tab" aria-selected="false">Photos</button>
+        <button class="tab ripple-button" data-filter="music" role="tab" aria-selected="false">Music</button>
+        <button class="tab ripple-button" data-filter="videos" role="tab" aria-selected="false">Videos</button>
       </div>
 
       <div class="grid gallery" id="gallery">
-        <a class="tile hover-zoom" data-type="photos" href="#"><img loading="lazy"
+        <!-- เพิ่มคลาส tilt ให้แต่ละ tile -->
+        <a class="tile hover-zoom tilt" data-type="photos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1544006659-f0b21884ce1d?q=80&w=900&auto=format&fit=crop"
             alt="Portrait"></a>
-        <a class="tile hover-zoom" data-type="photos" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="photos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1520975922284-9bcd70a3a479?q=80&w=900&auto=format&fit=crop"
             alt="Sky"></a>
-        <a class="tile hover-zoom" data-type="photos" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="photos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?q=80&w=900&auto=format&fit=crop"
             alt="Abstract"></a>
-        <a class="tile hover-zoom" data-type="music" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="music" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=900&auto=format&fit=crop"
             alt="Guitars"></a>
-        <a class="tile hover-zoom" data-type="music" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="music" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=900&auto=format&fit=crop"
             alt="Mic"></a>
-        <a class="tile hover-zoom" data-type="music" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="music" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?q=80&w=900&auto=format&fit=crop"
             alt="Records"></a>
-        <a class="tile hover-zoom" data-type="videos" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="videos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1459184070881-58235578f004?q=80&w=900&auto=format&fit=crop"
             alt="Camera"></a>
-        <a class="tile hover-zoom" data-type="videos" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="videos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=900&auto=format&fit=crop"
             alt="Film"></a>
-        <a class="tile hover-zoom" data-type="videos" href="#"><img loading="lazy"
+        <a class="tile hover-zoom tilt" data-type="videos" href="#"><img loading="lazy"
             src="https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa?q=80&w=900&auto=format&fit=crop"
             alt="Vinyl"></a>
       </div>
     </main>
 
     <!-- Right: Preview / Extras -->
-    <aside class="panel side hover-pop">
+    <aside class="panel side hover-pop tilt">
       <div class="card preview">
         <div class="avatar-wrap sm">
           <div class="avatar"><img src="./IMG/tle1.jpg" alt="" /></div>
@@ -129,12 +134,11 @@
 
   <!-- Lightbox -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-btn lb-close" aria-label="Close">×</button>
-    <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
+    <button class="lb-btn lb-close ripple-button" aria-label="Close">×</button>
+    <button class="lb-btn lb-prev ripple-button" aria-label="Previous">‹</button>
     <img id="lightboxImg" alt="image preview" />
-    <button class="lb-btn lb-next" aria-label="Next">›</button>
+    <button class="lb-btn lb-next ripple-button" aria-label="Next">›</button>
   </div>
-
 
   <script src="Sorwait_script.js"></script>
 </body>
