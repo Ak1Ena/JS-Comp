@@ -99,3 +99,15 @@ const typewriterEl = document.getElementById("typewriter");
         typewriterEl.innerHTML = text;
       }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  const bars = document.querySelectorAll(".progress-bar");
+  bars.forEach(bar => {
+    const skill = bar.getAttribute("data-skill");
+    setTimeout(() => {
+      const totalWidth = 500; // ความกว้างเต็มของ progress
+      const targetWidth = totalWidth * (skill / 100); // คำนวณตามเปอร์เซ็นต์
+      bar.style.width = targetWidth + "px";
+
+    }, 200);
+  });
+});

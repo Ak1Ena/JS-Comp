@@ -5,7 +5,7 @@ body {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    background: linear-gradient(to bottom, skyblue 70%, rgb(152, 208, 92) 70%);
+    background: linear-gradient(to bottom, skyblue 65%, rgb(152, 208, 92) 65%);
     background-repeat: repeat-x;
     background-size: auto 100%;
     font-family: 'Minecraftia', sans-serif;
@@ -24,7 +24,6 @@ body {
     color: rgb(0, 0, 0);
     
   }
-
   
   .line {
     position: fixed;
@@ -68,3 +67,103 @@ body {
         90%{background: url(png/csbm.png) no-repeat center center;}
         100%{background: url(png/csb.png) no-repeat center center;}
     }
+
+#box {
+  vertical-align: top; /* ให้เนื้อหาอยู่บนสุดของ box */
+  padding: 50px 0 50px 0;   /* เว้นระยะจากบนเล็กน้อย */
+}
+
+
+/* #education {
+  padding: 50px 0 50px 0;
+} */
+
+#skills {
+  width: 70%;
+  margin: 0 auto; 
+}
+
+#box h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+.card {
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-body {
+  padding: 10px;
+  background: rgb(207, 245, 255); /* พื้นหลังการ์ดเป็นสีดำโปร่งแสง */
+}
+
+.card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #292929;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #474747;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  color: #6f6f6f;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+}
+
+#education .row {
+  display: flex;
+  flex-direction: column; /* เรียงลงมา */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+  gap: 20px; /* ระยะห่างระหว่างการ์ด */
+}
+
+#education .col-md-5 {
+  width: 90%; 
+  max-width: 900px; 
+}
+
+#skills .row {
+  display: flex;
+  flex-direction: column; /* เรียงลงมา */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+  gap: 20px; /* ระยะห่างระหว่างการ์ด */
+}
+
+/* #skills .col-md-5 {
+  max-width: 100%;
+} */
+
+.progress {
+  width: 500px;
+  height: 25px;
+  background-color: #555; /* สีพื้นหลังของ bar */
+  border: 2px solid #222; /* กรอบเหมือน Minecraft */
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  width: 0; /* เริ่มจาก 0 เพื่อ animation */
+  height: 100%;
+  background: linear-gradient(to right, #5fca62, #4ca150); /* สีเขียวเข้มแบบ Minecraft */
+  text-align: center;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+  transition: width 2s ease-in-out;
+}
