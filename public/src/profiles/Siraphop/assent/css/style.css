@@ -226,6 +226,8 @@ html,
 #skills {
   text-align: center;
   padding: 50px;
+  padding: 35vh;
+
 }
 .head-skills{
   display: flex;
@@ -269,6 +271,7 @@ html,
 /*PROJECTS*/
 #projects {
   width: 100%;
+  padding-bottom: 35vh;
 }
 #projects > h1 {
   display: flex;

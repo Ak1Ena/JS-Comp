@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const jumpSound = document.getElementById('jump-sound');
     const dieSound = document.getElementById('die-sound');
     const scoreElement = document.getElementById('score');
+    const game = document.getElementById('game');
+
 
     // Game Variables
     let isJumping = false;
@@ -44,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(() => moveCactus(cactus2, 600 + Math.random() * 1000), 2500);
 
         const gameLoop = setInterval(() => {
+            if (game) game.classList.add('playing');
             if (isGameOver) {
                 clearInterval(gameLoop);
                 return;
@@ -193,10 +196,40 @@ document.addEventListener('DOMContentLoaded', function () {
                 setTimeout(() => aboutDino.classList.remove('jump-animation'), 500);
             }, 3000 + Math.random() * 5000);
         }
-        
+
         // Trigger initial scroll to run animations on load
         handleScrollAnimations();
     }
+
+    //  Typewriter looping 
+    (function () {
+        const el = document.querySelector('.welcome-text');
+        if (!el) return;
+        const text = el.getAttribute('data-text');
+        let i = 0;
+        let deleting = false;
+
+        function typeEffect() {
+            if (!deleting) {
+                el.textContent = text.slice(0, i++);
+                if (i > text.length) {
+                    deleting = true;
+                    setTimeout(typeEffect, 1500);
+                    return;
+                }
+            } else {
+                el.textContent = text.slice(0, i--);
+                if (i < 0) {
+                    deleting = false;
+                    i = 0;
+                }
+            }
+            setTimeout(typeEffect, deleting ? 60 : 100);
+        }
+
+        typeEffect();
+    })();
+
 
     // Consolidated Scroll Event Handler
     function handleScrollAnimations() {
@@ -206,9 +239,9 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             header.classList.remove('scrolled');
         }
-        
+
         let currentSectionId = '';
-        
+
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
@@ -222,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Check for revealing animations
             const revealPoint = section.getBoundingClientRect().top;
             const screenHeight = window.innerHeight;
-            
+
             // *** START OF FIX ***
             if (revealPoint < screenHeight * 0.9) {
                 section.classList.add('active');
@@ -236,12 +269,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 section.classList.remove('active');
                 if (section.id === 'skills') {
                     document.querySelectorAll('.progress').forEach(bar => {
-                        bar.style.width = '0%'; 
+                        bar.style.width = '0%';
                     });
                 }
             }
         });
-        
+
         // Update nav links active state
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -250,7 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-    
+
     window.addEventListener('scroll', handleScrollAnimations);
 
     // Custom Smooth Scrolling
@@ -259,7 +292,7 @@ document.addEventListener('DOMContentLoaded', function () {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (!target) return;
-            
+
             const targetPosition = target.getBoundingClientRect().top + window.scrollY - 60;
             const startPosition = window.scrollY;
             const distance = targetPosition - startPosition;
@@ -311,5 +344,132 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    //  Footprints trail 
+    (function () {
+        let last = 0;
+        const GAP = 16;
+        document.addEventListener('mousemove', (e) => {
+            const now = performance.now();
+            if (Math.hypot(e.movementX, e.movementY) < 2 && now - last < 40) return;
+            last = now;
+
+            const fp = document.createElement('div');
+            fp.className = 'footprint';
+            fp.style.left = (e.clientX - 7) + 'px';
+            fp.style.top = (e.clientY + 6) + 'px';
+            fp.style.transform += (e.movementX < 0 ? ' scaleX(-1)' : '');
+            document.body.appendChild(fp);
+
+            // animate-out
+            requestAnimationFrame(() => {
+                fp.style.opacity = '0';
+                fp.style.transform += ' translateY(6px)';
+            });
+            setTimeout(() => fp.remove(), 550);
+        }, { passive: true });
+    })();
+
+
+    // Scroll Runner 
+    (function () {
+        const runner = document.querySelector('#scroll-runner-vertical .runner');
+        if (!runner) return;
+
+        function updateRunner() {
+            const docH = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docH > 0 ? (window.scrollY / docH) : 0; // 0..1
+            const trackHeight = window.innerHeight - 48;              // ลดขนาด sprite
+            const y = trackHeight * progress;
+            runner.style.transform = `translateY(${y}px)`;
+            requestAnimationFrame(updateRunner);
+        }
+        requestAnimationFrame(updateRunner);
+    })();
+
+    // === ABOUT EPIC REVEAL (enter/exit only via IntersectionObserver) ===
+    (function () {
+        const about = document.getElementById('about');
+        if (!about) return;
+
+        function boomConfetti(duration = 1200, count = 150) {
+            const c = document.createElement('canvas');
+            Object.assign(c.style, {
+                position: 'fixed', inset: 0, width: '100vw', height: '100vh',
+                pointerEvents: 'none', zIndex: 9998
+            });
+            document.body.appendChild(c);
+            const ctx = c.getContext('2d');
+            const dpr = Math.max(1, window.devicePixelRatio || 1);
+            const W = c.width = Math.floor(innerWidth * dpr);
+            const H = c.height = Math.floor(innerHeight * dpr);
+            const parts = Array.from({ length: count }).map(() => ({
+                x: Math.random() * W,
+                y: Math.random() * (-H * 0.1),
+                vx: (Math.random() - 0.5) * 0.8,
+                vy: (Math.random() * 3 + 2) * 0.1,
+                size: Math.random() * 6 + 3,
+                rot: Math.random() * Math.PI * 2,
+                vr: (Math.random() - 0.5) * 0.25,
+                color: `hsl(${Math.floor(Math.random() * 360)}, 90%, 60%)`
+            }));
+            const start = performance.now();
+            (function tick(now) {
+                const t = now - start;
+                ctx.clearRect(0, 0, W, H);
+                parts.forEach(p => {
+                    p.x += p.vx * dpr;
+                    p.y += p.vy * dpr;
+                    p.vy += 0.015 * dpr;
+                    p.rot += p.vr;
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate(p.rot);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+                if (t < duration) requestAnimationFrame(tick); else c.remove();
+            })(start);
+        }
+
+        let inView = false;
+        let lastFired = 0;
+
+        function fireEpic() {
+            const now = performance.now();
+            if (now - lastFired < 800) return;
+            lastFired = now;
+
+            document.body.classList.add('body-shake');
+            setTimeout(() => document.body.classList.remove('body-shake'), 450);
+
+            about.classList.remove('about-epic');
+            void about.offsetWidth;
+            about.classList.add('about-epic');
+
+            boomConfetti(1100, 140);
+        }
+
+        const io = new IntersectionObserver(([entry]) => {
+            const nowIn = entry.isIntersecting && entry.intersectionRatio >= 0.6;
+            if (nowIn && !inView) {
+                inView = true;
+                fireEpic();
+            } else if (!nowIn && inView) {
+                inView = false;
+                about.classList.remove('about-epic');
+            }
+        }, { threshold: [0, 0.6] });
+
+        io.observe(about);
+    })();
+
+
+
+
+
+
+    dieSound.load();
+    jumpSound.load();
     startGame();
 });
