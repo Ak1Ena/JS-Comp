@@ -219,3 +219,7 @@ audio.volume = 0.35;
 document.addEventListener("click", () => {
   audio.play();
 }, { once: true });
+
+function isMobile() {
+  return window.innerWidth <= 768;
+}
