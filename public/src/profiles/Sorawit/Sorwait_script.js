@@ -140,3 +140,25 @@ document.querySelectorAll('.ripple-button').forEach(btn => {
     setTimeout(() => span.remove(), 600);
   });
 });
+// ===== Animate skills in profile panel =====
+(() => {
+  const fills = document.querySelectorAll('.skills-block .skill-fill');
+  if (!fills.length) return;
+
+  fills.forEach(fill => {
+    const level = parseInt(fill.dataset.level || '0', 10);
+    const percentEl = fill.closest('.skill').querySelector('.skill-percent');
+
+    // เริ่มที่ 0%
+    let current = 0;
+    const step = () => {
+      if (current < level) {
+        current++;
+        fill.style.width = current + '%';
+        percentEl.textContent = current + '%';
+        requestAnimationFrame(step);
+      }
+    };
+    requestAnimationFrame(step);
+  });
+})();
