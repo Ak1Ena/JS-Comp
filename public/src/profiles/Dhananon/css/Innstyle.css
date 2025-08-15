@@ -117,15 +117,16 @@ body {
 
 /* Section styling & scroll reveal */
 section {
+  min-height: 100vh; 
   padding: 4rem 1rem;
   opacity: 0;
-
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section.visible {
   opacity: 1;
   transform: translateY(0);
-
 }
 
 /* Section titles */
@@ -407,7 +408,3 @@ h2.section-title::after {
 ::-webkit-scrollbar-track {
   background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
 }
-
-
-
-
