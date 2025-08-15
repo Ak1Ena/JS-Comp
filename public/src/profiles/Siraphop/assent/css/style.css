@@ -419,3 +419,81 @@ html,
   background-color: #feca57;
   color: #000;
 }
+/* ====== Responsive Styles ====== */
+
+/* Tablets (≤1024px) */
+@media (max-width: 1024px) {
+  #app h1 {
+    --fontSize: 45px;
+    --lineHeight: 60px;
+    margin: calc(40vh - var(--lineHeight)) auto 0;
+  }
+
+  .flip-card {
+    width: 500px;
+    height: 320px;
+  }
+
+  #skills > .container {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  #projects > .container {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+/* Mobile portrait (≤480px) */
+@media (max-width: 480px) {
+  html{
+    width: 100%;
+  }
+  #app h1 {
+    --fontSize: 26px;
+    --lineHeight: 40px;
+    margin: 100px auto 0;
+  }
+
+  .header-container {
+    padding: 10px;
+  }
+
+  .header-container ul {
+    gap: 10px;
+  }
+
+  .flip-card {
+    margin:50px;
+    width: 550px;
+    height: 300px;
+  }
+
+  .flip-card-back h2 {
+    font-size: 28px;
+  }
+
+  #skills > .container {
+    grid-template-columns: 1fr;
+  }
+
+  #projects > .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-container p {
+    font-size: 1rem;
+  }
+
+}
+

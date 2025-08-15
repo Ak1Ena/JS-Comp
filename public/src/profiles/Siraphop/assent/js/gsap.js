@@ -92,9 +92,6 @@ const main = gsap.timeline({
 ScrollTrigger.create({
   trigger: "#svg",
   start: "bottom bottom",
-  onEnter: () => hideBox(),
-  onLeave: () => hideBox(),
-  onLeaveBack: () => hideBox()
 });
 
 document.querySelector('a[href="#app"]').addEventListener('click', (e) => {

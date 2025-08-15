@@ -14,9 +14,6 @@
 }
 
 body {
-  background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
   color: #fff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
@@ -32,7 +29,8 @@ body {
   height: 170vh;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* จัดเรียงให้ลงบรรทัดใหม่ */
+  flex-direction: column;
+  /* จัดเรียงให้ลงบรรทัดใหม่ */
   justify-content: center;
   align-items: center;
 }
@@ -71,7 +69,7 @@ body {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .section-title {
@@ -91,13 +89,39 @@ body {
   margin-bottom: 10px;
 }
 
+.general-video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* จัดเรียงให้ลงบรรทัดใหม่ */
+  justify-content: center;
+  align-items: center;
+}
+
+.general-video .bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 130vh;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  /* อยู่ด้านหลัง */
+  filter: brightness(50%);
+  /* ลดความสว่างเพื่อให้ข้อความชัด */
+}
 
 /* Section styling & scroll reveal */
 section {
+  min-height: 100vh; 
   padding: 4rem 1rem;
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 section.visible {
@@ -136,9 +160,7 @@ h2.section-title::after {
 
 }
 
-#skills {
-  padding: 50px 0;
-}
+
 
 .section-title {
   font-size: 2rem;
@@ -146,26 +168,41 @@ h2.section-title::after {
   font-weight: bold;
 }
 
-.skill-badge {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  border-radius: 50%;
-  background-color: #007bff; /* สีพื้นหลัง */
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+.skills-section {
+  padding: 4rem 1rem;
 }
 
-.skill-badge:hover {
-  transform: scale(1.1);
-  background-color: #0056b3;
-  cursor: pointer;
+.skill {
+  margin-bottom: 2rem;
 }
+
+.skill-header {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.skill-bar {
+  width: 100%;
+  background: #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 12px;
+}
+
+.skill-progress {
+  height: 100%;
+  width: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b); /* ไล่สี */
+  box-shadow: 0 0 10px rgba(255, 126, 95, 0.7); /* เงาเรืองแสง */
+  transition: width 1.5s ease-in-out;
+}
+
+
 
 
 /* button pulse animation */
@@ -255,10 +292,6 @@ h2.section-title::after {
   z-index: -1;
 }
 
-
-
-
-
 /* Typing animation styles */
 #typing {
   font-size: 1.8rem;
@@ -324,7 +357,7 @@ h2.section-title::after {
 .timeline-item:nth-child(odd) {
   width: 75%;
   right: 25%;
-  
+
 }
 
 .timeline-item:nth-child(even) {
@@ -348,4 +381,30 @@ h2.section-title::after {
 
 .timeline-item:nth-child(even)::after {
   left: -10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar {
+  width: 12px; /* ความกว้างของ scrollbar */
+}
+
+/* ขนาดของ Scrollbar */
+::-webkit-scrollbar {
+  width: 20px; /* แนวตั้ง */
+  height: 14px; /* แนวนอน */
+}
+
+/* ตัวเลื่อน (Thumb) */
+::-webkit-scrollbar-thumb {
+  background-image: url('../img/Chill.png'); /* รูป Thumb */
+  background-size: cover; /* ให้ภาพเต็มพื้นที่ */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50px 50px; /* ปรับขนาดรูปให้พอดี */
+  border-radius: 10px;
+}
+
+/* รางเลื่อน (Track) */
+::-webkit-scrollbar-track {
+  background: linear-gradient(-45deg, #667eea, #764ba2, #667eea, #764ba2);
 }
