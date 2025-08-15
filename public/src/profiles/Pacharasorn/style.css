@@ -790,6 +790,45 @@ footer {
     z-index: 21;
 }
 
+/* ——— Game container & text ——— */
+#game-container{
+  padding: 1rem;           
+}
+
+.instruction-text{
+  max-width: min(600px, 92vw);
+  text-align: center;
+  line-height: 1.35;
+  padding: 0 .5rem;
+  font-size: clamp(16px, 3.6vw, 22px); 
+  word-break: break-word;
+  white-space: normal;
+}
+
+.instruction-text::after{
+  font-size: .9em;         
+}
+
+/* ——— Game box ——— */
+#game{
+  width: min(600px, 92vw);
+  aspect-ratio: 3 / 1;      
+  height: auto;            
+}
+
+
+#score{
+  max-width: min(600px, 92vw);
+  text-align: center;
+}
+
+@media (max-width: 480px){
+  #game{
+    border-width: 1.5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15), inset 0 2px 12px rgba(0,0,0,.1);
+  }
+}
+
 /* ===============================
    4) Responsive
 ================================= */
@@ -892,6 +931,11 @@ footer {
         width: 15px;
         height: 15px;
     }
+
+    .event:nth-child(even){
+        left: 0%;
+    }
+
 
     .arrow {
         display: none;
