@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dino Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <div id="game-container" class="visible">
+    <!-- GAME -->
+    <div id="game-container" class="visible" aria-live="polite">
         <h3 class="instruction-text">Play to go to my portfolio</h3>
-        <br>
-        <div id="game">
-            <div class="bg sky"></div>
-            <div class="bg cloud cloud-a"></div>
-            <div class="bg cloud cloud-b"></div>
-            <div class="bg hills"></div>
-            <div id="dino"></div>
-            <div class="cactus" id="cactus1"></div>
-            <div class="cactus" id="cactus2"></div>
+
+        <div id="game" aria-label="Dino mini game">
+            <!-- ถ้าจะใช้พารัลแลกซ์ ค่อยแก้ให้เปิด 4 บรรทัดด้านล่าง -->
+            <!-- <div class="bg sky"></div>
+      <div class="bg cloud cloud-a"></div>
+      <div class="bg cloud cloud-b"></div>
+      <div class="bg hills"></div> -->
+
+            <div id="dino" role="img" aria-label="dino"></div>
+            <div class="cactus" id="cactus1" role="img" aria-label="cactus"></div>
+            <div class="cactus" id="cactus2" role="img" aria-label="cactus"></div>
             <div id="ground"></div>
         </div>
 
-        <div id="score">Score: 0</div>
+        <div id="score" aria-live="polite">Score: 0</div>
     </div>
 
-    <div id="cursor-dino"></div>
-    <div id="scroll-runner-vertical">
+    <!-- cursor dino -->
+    <div id="cursor-dino" aria-hidden="true"></div>
+
+    <!-- ปิดไว้ใน CSS -->
+    <div id="scroll-runner-vertical" aria-hidden="true">
         <div class="runner"></div>
     </div>
 
-
-
+    <!--  PORTFOLIO  -->
     <div id="portfolio" class="hidden">
         <header>
             <button class="hamburger-menu" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
-            <nav id="tabs">
+            <nav id="tabs" aria-label="Primary">
                 <a href="#home" class="active">Home</a>
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
@@ -52,12 +55,8 @@
         </header>
 
         <main>
-
-
-            <div id="walking-character"></div>
             <section id="home" class="section active">
                 <h1 class="welcome-text" data-text="Welcome to My Portfolio"></h1>
-
                 <div class="dino-micro"></div>
             </section>
 
@@ -65,7 +64,7 @@
                 <h2>About Me</h2>
 
                 <div class="profile-picture">
-                    <img src="Image/Phofile/456.jpg" alt="Pacharaasorn Khumprakong">
+                    <img src="Image/Phofile/456.jpg" alt="Pacharaasorn Khumprakong" />
                 </div>
 
                 <div class="panels-container">
@@ -80,9 +79,10 @@
                     <div class="about-panel">
                         <h3>Education</h3>
                         <p><strong>School:</strong> RangseeVittayaSchool</p>
-                        <p><strong>Period:</strong> From 2551 - 2566</p>
-                        <p><strong>University:</strong> ollege of Art, Media, and Technology : Chiang Mai University</p>
-                        <p><strong>Period:</strong> From 2567 - Present</p>
+                        <p><strong>Period:</strong> 2551–2566</p>
+                        <p><strong>University:</strong> College of Art, Media, and Technology — Chiang Mai University
+                        </p>
+                        <p><strong>Period:</strong> 2567 – Present</p>
                     </div>
                 </div>
             </section>
@@ -92,30 +92,26 @@
                 <div class="timeline">
                     <div class="event">
                         <h3>University Fresher</h3>
-                        <p class="date">2023 - 2024</p>
-                        <p>Established a strong foundation in key digital industry skills, including programming logic
-                            and UI/UX design, while enhancing communication abilities through foundational coursework in
-                            English and modern studies.</p>
-                        <br>
+                        <p class="date">2023 – 2024</p>
+                        <p>Established a strong foundation in programming logic and UI/UX design while improving
+                            communication through English and modern studies.</p>
+                        <br />
                         <h3>GPAX: 3.50</h3>
                     </div>
                     <div class="event">
                         <h3>University Fresher 2</h3>
                         <p class="date">2024</p>
-                        <p>Advanced technical abilities by studying digital industry infrastructure, information
-                            systems, and the principles of animation. Demonstrated strong performance by developing
-                            practical digital solutions and achieving excellent grades across key subjects.</p>
-                        <br>
+                        <p>Advanced technical abilities in digital infrastructure, information systems, and animation
+                            principles. Built practical solutions and achieved excellent grades.</p>
+                        <br />
                         <h3>GPAX: 3.61</h3>
                     </div>
                     <div class="event">
                         <h3>Backend & Full-Stack Development</h3>
-                        <p class="date">2025 - Present</p>
-                        <p>Gained proficiency in backend development with Spring Boot and database management, while
-                            strengthening fundamentals in JavaScript and Data Structures. This knowledge was expanded
-                            into full-stack capabilities by learning React to build modern, responsive user interfaces.
-                        </p>
-                        <br>
+                        <p class="date">2025 – Present</p>
+                        <p>Spring Boot, database, JavaScript, Data Structures → expanded to React for modern responsive
+                            UI.</p>
+                        <br />
                         <h3>GPAX: ????</h3>
                     </div>
                 </div>
@@ -126,25 +122,25 @@
                 <div class="skill">
                     <label>HTML/CSS</label>
                     <div class="progress-bar">
-                        <div class="progress" style="width: 0%" data-width="70%"></div>
+                        <div class="progress" data-width="70%"></div>
                     </div>
                 </div>
                 <div class="skill">
                     <label>JavaScript</label>
                     <div class="progress-bar">
-                        <div class="progress" style="width: 0%" data-width="80%"></div>
+                        <div class="progress" data-width="80%"></div>
                     </div>
                 </div>
                 <div class="skill">
-                    <label>php</label>
+                    <label>PHP</label>
                     <div class="progress-bar">
-                        <div class="progress" style="width: 0%" data-width="60%"></div>
+                        <div class="progress" data-width="60%"></div>
                     </div>
                 </div>
                 <div class="skill">
                     <label>UI/UX Design</label>
                     <div class="progress-bar">
-                        <div class="progress" style="width: 0%" data-width="40%"></div>
+                        <div class="progress" data-width="40%"></div>
                     </div>
                 </div>
             </section>
@@ -154,7 +150,7 @@
                 <div class="gallery-container">
                     <div class="gallery-slider">
                         <div class="project">
-                            <img src="Image/Certificate/C1.jpg" alt="Project 1">
+                            <img src="Image/Certificate/C1.jpg" alt="Programable line tracing (micro:bit Senior)" />
                             <div class="overlay">
                                 <h3>Programable line tracing</h3>
                                 <p>ได้เข้าแข่งขัน Programable line tracing รุ่น micro:bit Senior ระหว่างวันที่ 3-4
@@ -162,7 +158,7 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C4.jpg" alt="Project 2">
+                            <img src="Image/Certificate/C4.jpg" alt="Web Design and Development" />
                             <div class="overlay">
                                 <h3>Web Design and Development</h3>
                                 <p>ได้ผ่านการอบรบเชิงปฎิบัติการแบบออนไลน์ หลักสูตร Web Design and Development
@@ -170,7 +166,7 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C3.jpg" alt="Project 3">
+                            <img src="Image/Certificate/C3.jpg" alt="CAMT Open House Open Heart" />
                             <div class="overlay">
                                 <h3>CAMT Open House Open Heart</h3>
                                 <p>ได้เข้าอบรมเชิงปฏิบัติการ กิจกรรม CAMT Open House Open Heart
@@ -178,7 +174,7 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C6.jpg" alt="Project 4">
+                            <img src="Image/Certificate/C6.jpg" alt="Game Creation Competition" />
                             <div class="overlay">
                                 <h3>แข่งขันการสร้างเกม</h3>
                                 <p>ได้รับรางวัลระดับเหรียญทอง ในการแข่งขันการสร้างเกมสร้างสรรค์จากคอมพิวเตอร์
@@ -186,7 +182,7 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C14.jpg" alt="Project 5">
+                            <img src="Image/Certificate/C14.jpg" alt="MJU AR Training" />
                             <div class="overlay">
                                 <h3>MJU AR</h3>
                                 <p>ได้ผ่านการอบรมโครงการพัฒนาทักษะด้านเทคโนโลยีและนวัตกรรมแบบ AR
@@ -194,15 +190,15 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C17.jpg" alt="Project 6">
+                            <img src="Image/Certificate/C17.jpg" alt="Dii Camp UX/UI Design" />
                             <div class="overlay">
-                                <h3>Dii Camp UX Ui Design</h3>
+                                <h3>Dii Camp UX/UI Design</h3>
                                 <p>ได้เข้าร่วมการอบรมเชิงปฏิบัติการค่ายเสริมทักษะDii Camp UX Ui Design
                                     ของทางวิทยาลัยศิลปะสื่อและเทคโนโลยี มหาวิทยาลัยเชียงใหม่</p>
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image/Certificate/C19.jpg" alt="Project 7">
+                            <img src="Image/Certificate/C19.jpg" alt="Young Computer Scientist Camp 2023" />
                             <div class="overlay">
                                 <h3>Young Computer Scientist Camp 2023</h3>
                                 <p>ได้เข้าร่วมโครงการ Young Computer Scientist Camp 2023 ในหัวข้อ CHATBOT
@@ -210,7 +206,7 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image\ActivityPhoto\1.jpg" alt="Project 8">
+                            <img src="Image/ActivityPhoto/1.jpg" alt="Science Day Robotics Staff" />
                             <div class="overlay">
                                 <h3>Staff เกี่ยวกับหุ่นยนต์</h3>
                                 <p>เข้าร่วมกิจกรรมวันวิทยาศาสตร์ เป็น Staff เกี่ยวกับหุ่นยนต์ และโปรแกรม โดยใช้ Arduino
@@ -218,45 +214,46 @@
                             </div>
                         </div>
                         <div class="project">
-                            <img src="Image\ActivityPhoto\2.jpg" alt="Project 9">
+                            <img src="Image/ActivityPhoto/2.jpg" alt="Kindergarten Robotics Staff" />
                             <div class="overlay">
-                                <h3>Staff ในชั้นอนุบาล เกี่ยวกับหุ่นยนต์</h3>
+                                <h3>Staff ในชั้นอนุบาล</h3>
                                 <p>เข้าร่วมกิจกรรมวันวิทยาศาสตร์ เป็น Staff ในชั้นอนุบาล เกี่ยวกับหุ่นยนต์ และ Arduino
                                     เผยแพร่ข้อมูลให้แก่น้องน้อง</p>
                             </div>
                         </div>
                     </div>
-                    <button class="arrow left-arrow">‹</button>
-                    <button class="arrow right-arrow">›</button>
+                    <button class="arrow left-arrow" aria-label="Previous">‹</button>
+                    <button class="arrow right-arrow" aria-label="Next">›</button>
                 </div>
             </section>
 
             <section id="contact" class="section">
                 <h2>Contact Me</h2>
                 <form id="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" required></textarea>
+                    <input type="text" name="name" placeholder="Your Name" required />
+                    <input type="email" name="email" placeholder="Your Email" required />
+                    <textarea name="message" placeholder="Your Message" required></textarea>
                     <button type="submit">Send Message</button>
                 </form>
 
                 <div class="contact-info-details">
                     <p><strong>Tel:</strong> <a href="tel:091-8511-609">091-8511-609</a></p>
-                    <p><strong>FB:</strong> <a href="https://www.facebook.com/pacharasorn.khumprakong"
-                            target="_blank">Pacharasorn Khumprakong</a></p>
+                    <p><strong>FB:</strong> <a href="https://www.facebook.com/pacharasorn.khumprakong" target="_blank"
+                            rel="noopener">Pacharasorn Khumprakong</a></p>
                     <p><strong>Email:</strong> <a href="mailto:zxiuy123@gmail.com">zxiuy123@gmail.com</a></p>
                 </div>
             </section>
         </main>
 
         <footer>
-            <div class="dino-footer"></div>
+            <div class="dino-footer" aria-hidden="true"></div>
             <p>&copy; 2025 Dino Portfolio. FiatTy Edition.</p>
         </footer>
     </div>
 
-    <audio id="jump-sound" src="Sound/jump.wav"></audio>
-    <audio id="die-sound" src="Sound/die.wav"></audio>
+    <!-- audio -->
+    <audio id="jump-sound" src="Sound/jump.wav" preload="auto"></audio>
+    <audio id="die-sound" src="Sound/die.wav" preload="auto"></audio>
 
     <script src="script.js"></script>
 </body>

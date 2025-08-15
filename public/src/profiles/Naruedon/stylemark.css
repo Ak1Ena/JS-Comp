@@ -167,3 +167,134 @@ body {
   font-weight: bold;
   transition: width 2s ease-in-out;
 }
+
+.experience-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.experience-images img {
+  width: 500px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.slider-btn {
+  background-color: rgba(255,255,255,0.6);
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.image-row {
+  display: flex;
+  gap: 20px;
+  flex-direction: column; /* จัดกลางแนวนอน */
+  align-items: center;   /* ให้ข้อความซ้อนด้านล่างอยู่ตรงกัน */
+}
+
+.image-container {
+  width: 500px;
+  position: relative;
+  text-align: center;
+}
+
+.image-container img {
+  width: 500px;
+  height: auto;
+  display: block;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.nav-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s;
+}
+
+.nav-dot:hover {
+  background: yellow;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* Tooltip */
+.nav-dot::after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.nav-dot:hover::after {
+  opacity: 1;
+}
+
+/* cloud */
+.cloud {
+  position: fixed;
+  top: 50px;
+  left: -300px;
+  width: 300px;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  animation: cloudMove 30s linear infinite;
+  opacity: 0.7;
+  filter: brightness(1) hue-rotate(0deg); /* เริ่มต้น */
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(0);
+    opacity: 0.7;
+  }
+  to {
+    transform: translateX(calc(100vw + 300px)); /* เคลื่อนไปจนพ้นจอด้านขวา */
+    opacity: 0.7;
+  }
+}
+
+/* arrow */
+.arrowhead {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+}
